@@ -84,6 +84,6 @@ live:
 	git config user.name "live"
 	git config user.email "live@localhost"
 	git add .
-	git commit -m "Publish live ($(date -u +"%Y-%m-%d %H:%M:%S"))"
+	git commit -m "Publish live ($$(date -u +"%Y-%m-%d %H:%M:%S"))"
 	git log
 	git push -f origin live
