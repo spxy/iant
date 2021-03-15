@@ -1,0 +1,27 @@
+% Exercise 1
+\begin{exercise}{1}
+  If \( (a, b) = 1 \) and if \( c \mid a \) and \( d \mid b \), then
+  \( (c, d) = 1 \).
+\end{exercise}
+
+\begin{example}
+  Let \( a = 6 \) and \( b = 35 \). Let \( c = 2 \) and \( d = 5 \). We
+  see that \( c \mid a \) and \( d \mid b \) and indeed \( (c, d) = 1
+  \).
+\end{example}
+
+\begin{example}
+  Let \( a = 0 \) and \( b = 1 \). Let \( c = 2 \) and \( d = 1 \). We
+  see that \( c \mid a \) and \( d \mid b \) and indeed \( (c, d) = 1 \).
+\end{example}
+
+\begin{proof}
+  Let \( (c, d) = g \). Since \( g \mid c \) and \( c \mid a \), by
+  Theorem 1.1 (b) (transitive property), \( g \mid a \). Similarly, \( g
+  \mid b \). By Theorem 1.3 (c) and the following definition, we know
+  that every common divisor of \( a \) and \( b \) divides \( (a, b) \),
+  therefore \( g \mid 1 \).
+
+  Since the only integer that divides \( 1 \) is \( 1 \) itself, \( g =
+  1 \).
+\end{proof}
