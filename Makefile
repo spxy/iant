@@ -57,6 +57,9 @@ mac-setup:
 	sudo tlmgr update --self --all
 	sudo tlmgr install make4ht luaxml tex4ht environ
 
+deb-setup:
+	sudo apt-get install texlive
+
 view:
 	if command -v xdg-open; then xdg-open "$(FILE)"; \
 	elif command -v open; then open "$(FILE)"; fi
