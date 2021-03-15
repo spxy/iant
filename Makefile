@@ -79,6 +79,7 @@ clean:
 live:
 	git branch -D live || true
 	git switch -f --orphan live
+	rm -rf tmp
 	mv out/* .
 	git config user.name "live"
 	git config user.email "live@localhost"
