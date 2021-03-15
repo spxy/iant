@@ -58,7 +58,7 @@ mac-setup:
 	sudo tlmgr install make4ht luaxml tex4ht environ
 
 deb-setup:
-	sudo apt-get install texlive-latex-extra texlive-extra-utils
+	sudo apt-get install texlive-latex-extra texlive-extra-utils texlive-luatex
 
 view:
 	if command -v xdg-open; then xdg-open "$(FILE)"; \
