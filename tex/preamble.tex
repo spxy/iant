@@ -20,14 +20,18 @@
                {\begin{trivlist} \item[\hskip \labelsep {\bfseries #1.}]}
                {\end{trivlist}}
                
-\newenvironment{example}[1][Example]
-               {\begin{trivlist} \item[\hskip \labelsep {\bfseries #1.}]}
+\newenvironment{exercise}[1]
+               {\begin{trivlist} \item[\hskip \labelsep {\bfseries Exercise #1.}]}
                {\end{trivlist}}
 
-\newenvironment{exercise}[1][Exercise]
-               {\begin{trivlist} \item[\hskip \labelsep {\bfseries #1.}]}
+\newenvironment{example}[1][Example]
+               {\begin{trivlist} \item[\hskip \labelsep {\itshape #1.}]}
                {\end{trivlist}}
                
 \newenvironment{solution}[1][Solution]
                {\begin{trivlist} \item[\hskip \labelsep {\itshape #1.}]}
                {\end{trivlist}}
+
+\newenvironment{proof2}
+               {\begin{proof}[Another Proof]}
+               {\end{proof}}
