@@ -8,46 +8,46 @@ all:
 	make pages
 
 combined: chapters
-	mkdir -p out
-	pdflatex -jobname="$(COMB_JOB)" --output-directory=out tex/combined
+	mkdir -p _site
+	pdflatex -jobname="$(COMB_JOB)" --output-directory=_site tex/combined
 	make clean
 
 index: chapters
-	mkdir -p out
-	cp web/main.css out
-	> out/index.html
-	awk '/DOCTYPE html/,/begin chapters/' web/index.html >> out/index.html
-	cat tmp/chapters.html >> out/index.html
-	awk '/end chapters/,/html>/' web/index.html >> out/index.html
+	mkdir -p _site
+	cp web/main.css _site
+	> _site/index.html
+	awk '/DOCTYPE html/,/begin chapters/' web/index.html >> _site/index.html
+	cat tmp/chapters.html >> _site/index.html
+	awk '/end chapters/,/html>/' web/index.html >> _site/index.html
 	make clean
 
 pdfs:
-	mkdir -p out
+	mkdir -p _site
 	for n in $$(cut -d: -f1 sh/chapters.txt); do make pdf N="$$n"; done
 
 pdf: chapters
 	cat tmp/"$(N)-notes-defs.tex" tex/single.tex > tmp/"$(N)-notes.tex"
 	cat tmp/"$(N)-exercises-defs.tex" tex/single.tex > tmp/"$(N)-exercises.tex"
-	pdflatex -output-directory=out tmp/"$(N)-notes.tex"
-	pdflatex -output-directory=out tmp/"$(N)-exercises.tex"
+	pdflatex -output-directory=_site tmp/"$(N)-notes.tex"
+	pdflatex -output-directory=_site tmp/"$(N)-exercises.tex"
 	make clean
 
 pages:
-	mkdir -p out
+	mkdir -p _site
 	for n in $$(cut -d: -f1 sh/chapters.txt); do make page N="$$n"; done
 
 page: chapters
 	cat tmp/"$(N)-notes-defs.tex" tex/single.tex > tmp/"$(N)-notes.tex"
 	cat tmp/"$(N)-exercises-defs.tex" tex/single.tex > tmp/"$(N)-exercises.tex"
-	make4ht -d out tmp/"$(N)-notes.tex" mathjax
-	make4ht -d out tmp/"$(N)-exercises.tex" mathjax
+	make4ht -d _site tmp/"$(N)-notes.tex" mathjax
+	make4ht -d _site tmp/"$(N)-exercises.tex" mathjax
 	make decorate F="$(N)-notes.html"
 	make decorate F="$(N)-exercises.html"
 	make clean
 
 decorate:
-	sed 's|</head>|<link rel="stylesheet" href="main.css"></head>|' "out/$(F)" > "tmp/$(F)"
-	mv "tmp/$(F)" "out/$(F)"
+	sed 's|</head>|<link rel="stylesheet" href="main.css"></head>|' "_site/$(F)" > "tmp/$(F)"
+	mv "tmp/$(F)" "_site/$(F)"
 
 chapters:
 	sh sh/chapters.sh
@@ -65,25 +65,24 @@ view:
 	elif command -v open; then open "$(FILE)"; fi
 
 clean:
-	rm -f *.aux out/*.aux
-	rm -f *.log out/*.log
-	rm -f *.out out/*.out
-	rm -f *.idv out/*.idv
-	rm -f *.lg out/*.lg
-	rm -f *.4ct out/*.4ct
-	rm -f *.4tc out/*.4tc
-	rm -f *.dvi out/*.dvi
-	rm -f *.xref out/*.xref
+	rm -f *.aux _site/*.aux
+	rm -f *.log _site/*.log
+	rm -f *._site _site/*._site
+	rm -f *.idv _site/*.idv
+	rm -f *.lg _site/*.lg
+	rm -f *.4ct _site/*.4ct
+	rm -f *.4tc _site/*.4tc
+	rm -f *.dvi _site/*.dvi
+	rm -f *.xref _site/*.xref
 	rm -f *.css *.html *.tmp
 
 live:
 	git branch -D live || true
 	git switch -f --orphan live
-	rm -rf tmp
-	mv out/* .
+	git add _site/*
+	git mv _site/* .
 	git config user.name "live"
 	git config user.email "live@localhost"
-	git add .
 	git commit -m "Publish live ($$(date -u +"%Y-%m-%d %H:%M:%S"))"
 	git log
 	git push -f origin live
