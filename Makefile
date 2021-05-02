@@ -65,16 +65,18 @@ view:
 	elif command -v open; then open "$(FILE)"; fi
 
 clean:
+	rm -f *.lg _site/*.lg
 	rm -f *.aux _site/*.aux
 	rm -f *.log _site/*.log
-	rm -f *._site _site/*._site
+	rm -f *.out _site/*.out
 	rm -f *.idv _site/*.idv
-	rm -f *.lg _site/*.lg
 	rm -f *.4ct _site/*.4ct
 	rm -f *.4tc _site/*.4tc
 	rm -f *.dvi _site/*.dvi
+	rm -f *.tmp site/*.tmp
 	rm -f *.xref _site/*.xref
-	rm -f *.css *.html *.tmp
+	rm -f *.html
+	rm -f *.css
 
 live:
 	git branch -D live || true
