@@ -1,4 +1,4 @@
-COMB_JOB = iant-notes-soln
+COMB_JOB = iant-solutions
 COMB_PDF = $(COMB_JOB).pdf
 
 all:
@@ -26,10 +26,8 @@ pdfs:
 	for n in $$(cut -d: -f1 sh/chapters.txt); do make pdf N="$$n"; done
 
 pdf: chapters
-	cat tmp/"$(N)-notes-defs.tex" tex/single.tex > tmp/"$(N)-notes.tex"
-	cat tmp/"$(N)-exercises-defs.tex" tex/single.tex > tmp/"$(N)-exercises.tex"
-	pdflatex -output-directory=_site tmp/"$(N)-notes.tex"
-	pdflatex -output-directory=_site tmp/"$(N)-exercises.tex"
+	cat tmp/"$(N)-defs.tex" tex/single.tex > tmp/"$(N).tex"
+	pdflatex -output-directory=_site tmp/"$(N).tex"
 	make clean
 
 pages:
@@ -37,12 +35,9 @@ pages:
 	for n in $$(cut -d: -f1 sh/chapters.txt); do make page N="$$n"; done
 
 page: chapters
-	cat tmp/"$(N)-notes-defs.tex" tex/single.tex > tmp/"$(N)-notes.tex"
-	cat tmp/"$(N)-exercises-defs.tex" tex/single.tex > tmp/"$(N)-exercises.tex"
-	make4ht -d _site tmp/"$(N)-notes.tex" mathjax
-	make4ht -d _site tmp/"$(N)-exercises.tex" mathjax
-	make decorate F="$(N)-notes.html"
-	make decorate F="$(N)-exercises.html"
+	cat tmp/"$(N)-defs.tex" tex/single.tex > tmp/"$(N).tex"
+	make4ht -d _site tmp/"$(N).tex" mathjax
+	make decorate F="$(N).html"
 	make clean
 
 decorate:
