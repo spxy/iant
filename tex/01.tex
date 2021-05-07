@@ -1,5 +1,8 @@
-% Exercise 1
-\begin{exercise}{1}
+In these exercises lower case latin letters \( a \), \( b \), \( c \),
+\dots, \( x \), \( y \), \( z \) represent integers. Prove each of the
+statements in Exercises 1.1 through 1.6.
+
+\begin{exercise}{1.1}
   If \( (a, b) = 1 \) and if \( c \mid a \) and \( d \mid b \), then
   \( (c, d) = 1 \).
 \end{exercise}
@@ -10,7 +13,7 @@
   \( 5 \mid 35 \) and indeed \( (2, 5) = 1 \).
 \end{example}
 
-\begin{example}
+\begin{example}[Another example]
   Let \( a = 0 \) and \( b = 1 \). Let \( c = 2 \) and \( d = 1 \). We
   see that \( c \mid a \) and \( d \mid b \) and indeed \( (c, d) = 1
   \).
@@ -19,14 +22,14 @@
 \begin{proof}
   Let \( (c, d) = g \). Since \( g \mid c \) and \( c \mid a \), by
   the transitive property of divisibility in Theorem 1.1 (b), \( g
-  \mid a \). Similarly, \( g \mid b \). By the definition of gcd, and
-  the following definition, we know that every common divisor of \( a
-  \) and \( b \) divides \( (a, b) \), therefore \( g \mid 1 \). Since
-  the only integer that divides \( 1 \) is \( 1 \) itself, \( g = 1
+  \mid a \). Similarly, \( g \mid b \). By the definition of gcd in
+  section 1.3, we know that every common divisor of \( a \) and \( b
+  \) divides \( (a, b) \), therefore \( g \mid 1 \). Since the only
+  nonnegative integer that divides \( 1 \) is \( 1 \) itself, \( g = 1
   \).
 \end{proof}
 
-\begin{proof}
+\begin{proof}[Another proof]
   Since \( (a, b) = 1 \), by Theorem 1.2 and the definition of gcd in
   section 1.3, we know that there are integers \( x \) and \( y \)
   such that \( ax + by = 1 \). Since \( c \mid a \) and \( d \mid b
@@ -36,8 +39,7 @@
 \end{proof}
 
 
-% Exercise 2
-\begin{exercise}{2}
+\begin{exercise}{1.2}
   If \( (a, b) = (a, c) = 1 \), then \( (a, bc) = 1 \).
 \end{exercise}
 
@@ -48,13 +50,66 @@
 \end{example}
 
 \begin{proof}
-  Let \( d = (a, bc) \). We will now show that \( (d, b) = 1 \). Let
-  \( (d, b) = e \). Since \( e \mid d \) and \( d \mid a \), by the
-  transitive property of divisibility in Theorem 1.1 (b), we get \( e
-  \mid a \). Since \( e \mid a \) and \( e \mid b \), by the
-  definition of gcd and Theorem 1.3 (c), we get \( e \mid (a, b) = 1
-  \). Since \( e \ge 0 \) by the definition of gcd and since the only
-  nonnegative integer that divides \( 1 \) is \( 1 \) itself, \( e = 1
-  \), i.e., \( (d, b) = 1 \).
+  We assume \( (a, bc) > 1 \) and obtain a contradiction. Since \( (a,
+  bc) > 1 \), from the fundamental theorem of arithmetic show in
+  Theorem 1.10, we know that there is a prime \( p \) such that \( p
+  \mid (a, bc) \). By the definition of gcd in section 1.3, we know
+  that \( p \mid a \) and \( p \mid bc \). If \( p \mid bc \), from
+  Thereom 1.9 we know that \( p \mid b \) or \( p \mid c \). If \( p
+  \mid a \) and \( p \mid b \), from the definition of gcd we know
+  that \( p \mid (a, b) \). But \( (a, b) = 1 \). Since the only
+  nonnegative integer that divides \( 1 \) is \( 1 \) itself, we have
+  obtained a contradiction. If \( p \mid a \) and \( p \mid c \), we
+  obtain a contradiction similarly. Thus \( (a, bc) = 1 \).
 \end{proof}
 
+\begin{proof}[Another proof]
+  This proof avoids the use of the fundamental theorem of arithmetic.
+  Let \( d = (a, bc) \). We will first show that \( (d, b) = 1 \) and
+  then conclude later that \( d = 1 \). Let \( (d, b) = e \). Since \(
+  e \mid d \) and \( d \mid a \), by the transitive property of
+  divisibility in Theorem 1.1 (b), we get \( e \mid a \). Since \( e
+  \mid a \) and \( e \mid b \), by the definition of gcd and Theorem
+  1.3 (c), we get \( e \mid (a, b) = 1 \). Since \( e \ge 0 \) by the
+  definition of gcd and since the only nonnegative integer that
+  divides \( 1 \) is \( 1 \) itself, \( e = 1 \), i.e., \( (d, b) = 1
+  \). Since \( d \mid bc \) and \( (d, b) = 1 \), by Thereom 1.5, we
+  get \( d \mid c \). Since \( d \mid a \) and \( d \mid c \), from
+  the definition of gcd, we get \( d \mid (a, c) = 1 \). Thus \( d = 1
+  \).
+\end{proof}
+
+\begin{proof}[Yet another proof]
+  This is a simple proof that depends only on the propeties of gcd
+  shown in section 1.3. Since \( (a, b) = 1 \) and \( (a, c) = 1 \),
+  there exist integers \( x_1 \), \( y_1 \), \( x_2 \), and \( y_2 \)
+  such that
+  \begin{align*}
+    a x_1 + b y_1 & = 1, \\
+    a x_2 + c y_2 & = 1.
+  \end{align*}
+  Therefore
+  \(
+    (a x_1 + b y_1) (a x_2 + c y_2) = 1 \\
+    \iff a (a x_1 x_2 + c x_1 y_2 + b y_1 x_2) + bc (y_1 y_2) = 1.
+  \)
+  Therefore (a, bc) = 1.
+\end{proof}
+
+
+\begin{exercise}{1.3}
+  If \( (a, b) = 1 \), then \( (a^n, b^k) = 1 \) for all \( n \le 1
+  \), \( k \le 1 \).
+\end{exercise}
+
+\begin{proof}
+  We assume \( (a^n, b^n) > 1 \) and obtain a contradiction. Since \(
+  (a^n, b^n) > 1 \), from the fundamental theorem of arithmetic shown
+  in Theorem 1.10, we know that there is a prime \( p \) such that \(
+  p \mid (a^n, b^n) \). Since \( p \mid a^n \), from Theorem 1.9 we
+  know that \( p \mid a \). Similarly, we know that \( p \mid b \).
+  Since \( p \mid a \) and \( p \mid b \), from the definition of gcd
+  in section 1.3, we get \( p \mid (a, b) = 1 \). This is a
+  contradiction because the only nonnegative integer that divides \( 1
+  \) is \( 1 \) itself.
+\end{proof}
