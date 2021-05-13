@@ -7,9 +7,13 @@ all:
 	make index
 	make pages
 
+01 02 03 04 05 06 07 08 09 10 11 12 13 14:
+	make pdf N=$@
+	make page N=$@
+
 combined: chapters
 	mkdir -p _site
-	pdflatex -jobname="$(COMB_JOB)" --output-directory=_site tex/combined
+	pdflatex -halt-on-error -jobname="$(COMB_JOB)" --output-directory=_site tex/combined
 	make clean
 
 index: chapters
@@ -22,19 +26,19 @@ index: chapters
 	make clean
 
 pdfs:
-	mkdir -p _site
 	for n in $$(cut -d: -f1 sh/chapters.txt); do make pdf N="$$n"; done
 
 pdf: chapters
+	mkdir -p _site
 	cat tmp/"$(N)-defs.tex" tex/single.tex > tmp/"$(N).tex"
-	pdflatex -output-directory=_site tmp/"$(N).tex"
+	pdflatex -halt-on-error -output-directory=_site tmp/"$(N).tex"
 	make clean
 
 pages:
-	mkdir -p _site
 	for n in $$(cut -d: -f1 sh/chapters.txt); do make page N="$$n"; done
 
 page: chapters
+	mkdir -p _site
 	cat tmp/"$(N)-defs.tex" tex/single.tex > tmp/"$(N).tex"
 	make4ht -d _site tmp/"$(N).tex" mathjax
 	make decorate F="$(N).html"

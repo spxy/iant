@@ -1,0 +1,287 @@
+\begin{exercise}{5.1}
+  Let \( S \) be a set of \( n \) integers (not necessarily distinct).
+  Prove that some nonempty subset of \( S \) has a sum which is
+  divisible by \( n \).
+\end{exercise}
+
+\begin{proof}
+  Let \( S = \{ s_1, s_2, \dots, s_n \} \). Let us define \( r_k \)
+  such that
+  \[
+  s_1 + s_2 + \dots + s_k \equiv r_k \pmod{n}
+  \]
+  where \( 0 \le r_k < n \). Theorem 1.14 guarantees that such \( r_k
+  \) exists for \( k = 1, 2, \dots, n \) Now consider the set
+  \[
+  R = \{ r_1, r_2, \dots, r_n \}.
+  \]
+  Either there exists \( r_m \) in \( R \) such that \( r_m \equiv 0
+  \pmod{n} \) or no such \( r_m \) exists. If such an \( r_m \)
+  exists, then \( n \mid r_m \). If no such \( r_m \) exists then \( 1
+  \le r_k < n \) for each \( r_k \) in \( R \). Therefore each of the
+  \( n \) elements in \( R \) can have one of \( n - 1 \) values. By
+  pigeonhole principle, there are at least two elements in \( R \)
+  must have the same value. Let \( r_i = r_j \) where \( j > i \).
+  Then \( r_j - r_i = s_{i + 1} + \dots + s_{j} \equiv 0
+  \pmod{n} \).
+\end{proof}
+
+
+\begin{exercise}{5.2}
+  Prove that \( 5n^3 + 7n^5 \equiv 0 \pmod{12} \) for all integers \( n \).
+\end{exercise}
+
+\begin{proof}
+  Let \( f(n) = 5n^3 + 7n^5 \). If \( f(k) \equiv 0 \pmod{12} \) where
+  \( k \) is an integer such that \( 0 \le k < 12 \), then by Theorem
+  5.2 (b), \( f(n) \equiv 0 \pmod{12} \) for all \( n \equiv k
+  \pmod{12} \). We can verify that \( f(k) \equiv 0 \pmod{12} \) for
+  \( k = 0, 1, \dots, 11 \). Thus \( f(n) \equiv 0 \pmod{12} \) for
+  all \( n \equiv k \pmod{12} \) for all \( k = 0, 1, \dots, 11 \). By
+  theorem Theorem 5.10 (c), \( f(n) \equiv 0 \pmod{12} \) for all
+  integers \( n \).
+\end{proof}
+
+\begin{proof}[Another proof]
+  Since \( 7 \equiv -5 \pmod{12} \), using 5.2 (a) we get
+  \[ 5n^3 + 7n^5 \equiv 5n^3 - 5n^5 \pmod{12}. \]
+  Now we want to solve
+  \[ 5n^3 - 5n^5 \equiv 0 \pmod{12}. \]
+  The above congruence can be rewritten as
+  \[ 5n^3 (1 + n) (1 - n) \equiv 0 \pmod{12}. \]
+  We can verify that this congruence holds good for \( n \equiv k
+  \pmod{3} \) for \( k = 0, 1, 2 \) and \( n \equiv k \pmod{4} \) for
+  \( k = 0, 1, 2, 3 \). Thus the congruence holds good for \( n \equiv
+  k \pmod{12} \) for \( k = 0, 1, 2, \dots, 11 \).
+\end{proof}
+
+
+\begin{exercise}{5.3 (a)}
+  Find all positive integers \( n \) for which \( n^{13} \equiv n
+  \pmod{1365} \).
+\end{exercise}
+
+\begin{solution}
+  Since \( 1365 = 3 \cdot 5 \cdot 7 \cdot 13 \), we want to find all
+  positive integers \( n \) such that \( n^{13} \equiv n \pmod{3 \cdot
+    5 \cdot 7 \cdot 13} \). Using the Little Fermat Theorem from
+  Theorem 5.19, we find that:
+  \begin{itemize}
+  \item
+    For all integers \( n \), \( n^{13} = \left( n^3 \right)^3 \cdot
+    n^3 \cdot n \equiv n \cdot n \cdot n \equiv n^3 \equiv n \pmod{3}.
+    \)
+  \item
+    For all integers \( n \), \( n^{13} = \left( n^5 \right)^2 \cdot
+    n^3 \equiv n^2 \cdot n^3 \equiv n^5 \equiv n \pmod{5}. \)
+  \item
+    For all integers \( n \), \( n^{13} = n^7 \cdot n^6 \equiv n \cdot
+    n^6 \equiv n^7 \equiv n \pmod{7}. \)
+  \item
+    For all integers \( n \), \( n^{13} \equiv n \pmod{13}. \)
+  \end{itemize}
+  Since \( 3 \), \( 5 \), \( 7 \), and \( 13 \) are relatively prime
+  in pairs, we conclude that \( n^{13} \equiv n \pmod{1365} \) for all
+  integers \( n \).
+\end{solution}
+
+
+\begin{exercise}{5.3 (b)}
+  Find all positive integers \( n \) for which \( n^{17} \equiv n
+  \pmod{4080} \).
+\end{exercise}
+
+\begin{solution}
+  Since \( 4080 = 16 \cdot 3 \cdot 5 \cdot 17 \), we want to find all
+  positive integers \( n \) such that \( n^{17} \equiv n \pmod{16
+    \cdot 3 \cdot 5 \cdot 17} \). Using the Little Fermat Theorem from
+  Theorem 5.19, we get:
+  \begin{itemize}
+  \item
+    For all integers \( n \), \( n^{17} = \left( n^3 \right)^3 \cdot
+    \left( n^3 \right)^2 \cdot n^2 \equiv n \cdot n^2 \cdot n^2 \equiv
+    n^3 \cdot n^2 \equiv n \cdot n^2 \equiv n^3 \equiv n \pmod{3} \).
+  \item
+    For all integers \( n \), \( n^{17} = \left( n^{5} \right)^3 \cdot
+    n^2 \equiv n^3 \cdot n^2 \equiv n^5 \equiv n \pmod{5} \).
+  \item
+    For all integers \( n \), \( n^{17} \equiv n \pmod{17} \).
+  \end{itemize}
+  We can verify that \( n^{17} \equiv n \pmod{16} \) if and only if \(
+  n \equiv k \pmod{16} \) where \( k \in \{ 0, 1, 3, 5, 7, 9, 11, 13,
+  15 \} \). Since \( 16 \), \( 3 \), \( 5 \), and \( 17 \) are
+  relatively prime in pairs, we conclude that \( n^{17} \equiv n
+  \pmod{13} \) for all integers \( n \equiv k \pmod{16} \) where \( k
+  \in \{ 0, 1, 3, 5, 7, 9, 11, 13, 15 \} \).
+\end{solution}
+
+
+\begin{exercise}{5.4 (a)}
+  Prove that \( \varphi(n) \equiv 2 \pmod{4} \) when \( n = 4 \) and
+  when \( n = p^a \), where \( p \) is a prime, \( p \equiv 3
+  \pmod{4} \).
+\end{exercise}
+
+\begin{proof}
+  If \( n = 4 \), \( \varphi(n) = \varphi(2^2) = 2^2 - 2 = 2 \equiv 2
+  \pmod{4} \). We used Theorem 2.5 in this computation. Let \( a \ge 1
+  \) because \( \varphi(p^0) = 1 \not\equiv 2 \pmod{4} \). If \( n =
+  p^a \), where \( p \) is prime, \( p \equiv 3 \pmod{4} \), \(
+  \varphi(n) = \varphi(p^a) = p^a - p^{a - 1} \equiv 3^a - 3^{a - 1}
+  \pmod{4} \). Note that
+  \begin{align*}
+    3^a & \equiv 1 \pmod{4} \text{ if } a \text{ is even}, \\
+    3^a & \equiv 3 \pmod{4} \text{ if } a \text{ is odd}.
+  \end{align*}
+  Thus
+  \begin{align*}
+    3^a - 3^{a - 1} \equiv 3 - 1 & \equiv 2 \pmod{4}
+    	\text{ if } a \text{ is even}, \\
+    3^a - 3^{a - 1} \equiv 1 - 3 \equiv -2 & \equiv 2 \pmod{4}
+    	\text{ if } a \text{ is odd}.
+  \end{align*}
+  We have shown that \( \varphi(n) \equiv 2 \pmod{4} \) when \( p \)
+  is a prime, \( p \equiv 3 \pmod{4} \).
+\end{proof}
+
+
+\begin{exercise}{5.4 (b)}
+  Find all \( n \) for which \( \varphi(n) \equiv 2 \pmod{4} \).
+\end{exercise}
+
+\begin{solution}
+  Let us consider the following sets:
+  \begin{itemize}
+  \item
+    Let \( S_1 = \{ 1 \} \).
+  \item
+    Let \( S_2 = \{ n \mid n = 2^a \} \) for integer \( a \ge 1 \).
+  \item
+    Let \( S_3 = \{ n \mid n = p^a m \} \) for prime \( p \equiv 1
+    \pmod{4} \), integers \( a \ge 1 \), \( m \ge 1 \), \( (p, m) = 1
+    \).
+  \item
+    Let \( S_4 = \{ n \mid n = p^a q^b m \} \) for primes \( p \equiv
+    q \equiv 3 \pmod{4} \), \( p \neq q \), integers \( a \ge 1 \), \(
+    b \ge 1 \), \( m \ge 1 \), \( (p, m) = (q, m) = 1 \), and \( (p',
+    m) = 1 \) for all primes \( p' \equiv 1 \pmod{4} \).
+  \item
+    Let \( S_5 = \{ n \mid n = p^a 2^b \} \)
+    for prime \( p \equiv 3 \pmod{4} \) and integers \( a \ge 1 \), \( b \ge 1 \).
+  \item
+    Let \( S_6 = \{ n \mid n = p^a \} \)
+    for prime \( p \equiv 3 \pmod{4} \) and integer \( a \ge 1 \).
+  \end{itemize}
+  We now show that every integer \( n \) belongs to one of the above
+  sets. First note that every integer has an odd prime factor or it
+  does not. Now consider the following cases:
+  \begin{itemize}
+    \item
+      If \( n \) does not have an odd prime factor, \( n \in S_1 \cup
+      S_2 \).
+    \item
+      If \( n \) has an odd prime factor, the factor is either of the
+      form \( 4k + 1 \) or of the form \( 4k + 3 \) where \( k \) is
+      an integer.
+      \begin{itemize}
+      \item
+        If \( n \) has an odd prime factor of the form \( 4k + 1 \),
+        \( n \in S_3 \).
+      \item
+          If \( n \) has an odd prime factor but none of the factors
+          is of the form \( 4k + 1 \), then all its odd prime factors
+          must be of the form \( 4k + 3 \). For such an \( n \),
+          either only a single prime of the form \( 4k + 3 \) divides
+          \( n \) or multiple distinct primes of the form \( 4k + 3 \)
+          divide \( n \).
+          \begin{itemize}
+          \item
+            If multiple distinct primes of the form \( 4k + 3 \)
+            divide \( n \), \( n \in S_4 \).
+          \item
+            If only a single prime of the form \( 4k + 3 \) divides \(
+            n \), consider that either \( 2 \mid n \) or \( 2 \nmid n
+            \).
+            \begin{itemize}
+              \item
+                If only a single prime of the form \( 4k + 3 \)
+                divides \( n \) and \( 2 \mid n \), \( n \in S_5 \).
+              \item
+                If only a single prime of the form \( 4k + 3 \)
+                divides \( n \) and \( 2 \nmid n \), \( n \in S_6 \).
+            \end{itemize}
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
+  We have shown that \( S_1 \cup S_2 \cup S_3 \cup S_4 \cup S_5 \cup
+  S_6 \) is the set of all integers. We will now find all integers \(
+  n \) for which \( \varphi(n) \equiv 2 \pmod{4} \). 
+  \begin{itemize}
+  \item
+    If \( n \in S_1 \), i.e., if \( n = 1 \), then \( \varphi(n) = 1
+    \not\equiv 2 \pmod{4} \).
+  \item
+    If \( n \in S_2 \), i.e., if \( n = 2^a \) for integer \( a \ge 1
+    \), then \( \varphi(n) \equiv 2^{a - 1} \pmod{4} \). Thus \(
+    \varphi(n) = 2 \pmod{4} \) if and only if \( a = 2 \), i.e., \( n
+    = 4 \).
+  \item
+    If \( n \in S_3 \), i.e., if \( n = p^a m \) for prime \( p \equiv
+    1 \pmod{4} \), integers \( a \ge 1 \), \( m \ge 1 \), \( (p, m) =
+    1 \), then \( \varphi(n) = \varphi(p^a) \varphi(m) = (p^a - p^{a -
+      1}) \varphi(m) \equiv (1 - 1) \varphi(m) \equiv 0 \pmod{4} \).
+  \item
+    If \( n \in S_4 \), i.e., if \( n = p^a q^b m \) for primes \( p
+    \equiv q \equiv 3 \pmod{4} \), \( p \neq q \), integers \( a \ge 1
+    \), \( b \ge 1 \), \( m \ge 1 \), \( (p, m) = (q, m) = 1 \), and
+    \( (p', m) = 1 \) for all primes \( p' \equiv 1 \pmod{4} \), then
+    \( \varphi(n) = \varphi(p^a) \varphi(q^b) \varphi(m) \). In the
+    solution to part (a) of this exercise problem we have shown that
+    \( \varphi(p^a) \equiv 2 \pmod{4} \) when prime \( p \equiv 3
+    \pmod{4} \) and integer \( a \ge 1 \). Thus \( \varphi(n) \equiv 2
+    \cdot 2 \cdot \varphi(m) \equiv 0 \not\equiv 2 \pmod{4} \).
+  \item
+    If \( n \in S_5 \), i.e., if \( n = p^a 2^b \) for prime \( p
+    \equiv 3 \pmod{4} \) and integers \( a \ge 1 \), \( b \ge 1 \),
+    then \( \varphi(n) = \varphi(p^a) \varphi(2^b) \equiv 2 \cdot 2^{b
+      - 1} \equiv 2^b \pmod{4} \). Thus \( \varphi(n) \equiv 2
+    \pmod{4} \) if and only if \( b = 1 \), i.e., \( n = 2p^a \).
+  \item
+    If \( n \in S_6 \), i.e., if \( n = p^a \) for prime \( p \equiv 3
+    \pmod{4} \) and integer \( a \ge 1 \), then \( \varphi(n) =
+    \varphi(p^a) \equiv 2 \pmod{4} \) as shown in the solution to the
+    part (a) of this exercise problem.
+  \end{itemize}
+  We have shown that \( \varphi(n) \equiv 2 \pmod{4} \) if and only if
+  \( n = 4 \) or \( n = p^a \) or \( n = 2p^a \) for prime \( p \) and
+  integer \( a \ge 1 \).
+\end{solution}
+
+
+\begin{exercise}{5.5}
+  A yardstick is divided into inches is again divided into 70 equal
+  parts. Prove that among the four shortest divisions two have left
+  endpoints corresponding to 1 and 19 inches. What are the right
+  endpoints of the other two?
+\end{exercise}
+
+\begin{solution}
+  TODO
+\end{solution}
+
+
+\begin{exercise}{5.6}
+  Find all \( x \) which simultaneously satisfy the system of congruences
+  \[
+    x \equiv 1 \pmod{3}, \qquad
+    x \equiv 2 \pmod{4}, \qquad
+    x \equiv 3 \pmod{5}.
+  \]
+\end{exercise}
+
+\begin{proof}
+  TODO: Chinese Remainder Theorem
+\end{proof}
+
+
+
