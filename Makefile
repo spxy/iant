@@ -68,16 +68,16 @@ view:
 	elif command -v open; then open "$(FILE)"; fi
 
 clean:
-	rm -f *.lg _site/*.lg
-	rm -f *.aux _site/*.aux
-	rm -f *.log _site/*.log
-	rm -f *.out _site/*.out
-	rm -f *.idv _site/*.idv
-	rm -f *.4ct _site/*.4ct
-	rm -f *.4tc _site/*.4tc
-	rm -f *.dvi _site/*.dvi
-	rm -f *.tmp site/*.tmp
-	rm -f *.xref _site/*.xref
+	find . -name "*.lg" -exec rm {} +
+	find . -name "*.aux" -exec rm {} +
+	find . -name "*.log" -exec rm {} +
+	find . -name "*.out" -exec rm {} +
+	find . -name "*.idv" -exec rm {} +
+	find . -name "*.4ct" -exec rm {} +
+	find . -name "*.4tc" -exec rm {} +
+	find . -name "*.dvi" -exec rm {} +
+	find . -name "*.tmp" -exec rm {} +
+	find . -name "*.xref" -exec rm {} +
 	rm -f *.html
 	rm -f *.css
 

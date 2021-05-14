@@ -1,0 +1,100 @@
+This appendix presents some interesting results in the form of lemmas.
+These lemmas are used in some of the solutions. However these are
+important enough that they are enumerated independently in this
+appendix.
+
+\begin{lemma}
+  The greatest common divisor (gcd) of \( a \) and \( b \) is the
+  smallest positive integer that can be written as \( ax + by \) where
+  \( a \), \( b \), \( x \), and \( y \) are integers such that either
+  \( a \ne 0 \) or \( b \ne 0 \).
+\end{lemma}
+
+\begin{proof}
+  Let \( d = (a, b) \). From the properties of gcd we know that \( d
+  \ge 0 \) and in fact \( d = 0 \) if and only if \( a = b = 0 \).
+  Since we have either \( a \) or \( b \) as nonzero, \( d > 0 \).
+  From the properties of gcd, we know that \( d \) can be written as
+  \( ax + by \). We will now show that \( d \) is the smallest such
+  integer that can be written as \( ax + by \).
+
+  Assume there exists an integer \( d' \) such that \( 0 < d' < d \)
+  and \( d' = ax + by \) for some integers \( x \) and \( y \). Then
+  \( d \mid d' \) by the linearity property of divisibility. Since \(
+  d \mid d' \) and \( d' \ne 0 \), we get \( \lvert d \rvert \le
+  \lvert d' \rvert \) by the comparison property of divisibility.
+  Since \( d \ge 0 \) and \( d' > 0 \), the previous inequality is
+  equivalent to \( d \le d' \). This contradicts our assumption that
+  \( d' < d \).
+\end{proof}
+
+
+\begin{lemma}
+  \label{multi-coprime}
+  If \( (a, b_1) = (a, b_2) = \dots = (a, b_n) = 1 \), then \( (a, b_1
+  b_2 \cdots b_n) = 1 \) where \( a \), \( b_1 \), \( b_2 \), \( \dots
+  \), \( b_n \) are integers.
+\end{lemma}
+
+\begin{proof}
+  We use induction on \( n \). If \( n = 2 \), the lemma is true by
+  exercise 1.2. Assume, then, that the lemma is true for \( n - 1 \).
+  Therefore \( (a, b_1 b_2 \cdots b_{n - 1}) = 1 \). Since \( (a, b_1 b_2
+  \cdots b_{n - 1}) = (a, b_n) = 1 \), by exercise 1.2 we get \( (a,
+  b_1 b_2 \cdots b_n ) = 1 \).
+\end{proof}
+
+
+\begin{lemma}
+  If \( (a, b) = 1 \), \( a \mid c \), and \( b \mid c \), then \( ab
+  \mid c \) where \( a \), \( b \), and \( c \) are integers.
+\end{lemma}
+
+\begin{proof}
+  Since \( a \mid c \), we have \( c = ak \) for some integer \( k \).
+  Since \( b \mid c \), we have \( b \mid ak \). Since \( b \mid ak \)
+  and \( (b, a) = 1 \), by Euclid's lemma we get \( b \mid k \). Using
+  the multiplication property of divisibility, we get \( ab \mid ak
+  \), i.e., \( ab \mid c \).
+\end{proof}
+
+
+\begin{lemma}
+  If \( a_1, a_2, \dots, a_n \) are relatively prime in pairs, \( a_1
+  \mid c \), \( a_2 \mid c \), \( \dots \), \( a_n \mid c \), then \(
+  a_1 a_2 \cdots a_n \mid c \) where \( a_1, a_2, \dots, a_n \), and
+  \( c \) are integers.
+\end{lemma}
+
+\begin{proof}
+  We use induction on \( n \). If \( n = 2 \), this lemma is true by
+  the previous lemma. Let \( A = a_1 a_2 \cdots a_{n-1} \). Assume
+  that this lemma is true for \( n - 1 \). Therefore \( A \mid c \).
+  Since \( (a_n, a_1) = (a_n, a_2) = \dots = (a_n, a_{n-1}) = 1 \),
+  using Lemma \ref{multi-coprime} we get \( (A, a_n) = 1 \). Since \(
+  (A, a_n) = 1 \), \( A \mid c \), and \( a_n \mid c \), using the
+  previous lemma we get \( A a_n \mid c \).
+\end{proof}
+
+
+\begin{lemma}
+  Let \( m_1, m_2, \dots, m_r \) are positive integers, relatively
+  prime in pairs. If
+  \begin{align*}
+    x & \equiv a \pmod{m_1}, \\
+    x & \equiv a \pmod{m_2}, \\
+      & \vdotswithin{\equiv} \\
+    x & \equiv a \pmod{m_r}, \\
+  \end{align*}
+  then \( x \equiv a \pmod{m_1 m_2 \cdots m_r} \).
+\end{lemma}
+
+\begin{proof}
+  We have \( m_1 \mid (x - a) \), \( m_2 \mid (x - a) \), \( \dots \),
+  \( m_r \mid (x - a) \), where \( m_1, m_2, \dots, m_r \) are
+  relatively prime in pairs. Therefore, by the previous lemma, we get
+  \( m_1 m_2 \cdots m_r \mid (x - a) \), i.e., \( x \equiv a \pmod{m_1
+    m_2 \cdots m_r} \).
+\end{proof}
+
+  
