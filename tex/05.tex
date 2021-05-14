@@ -215,7 +215,7 @@
   \end{itemize}
   We have shown that \( S_1 \cup S_2 \cup S_3 \cup S_4 \cup S_5 \cup
   S_6 \) is the set of all integers. We will now find all integers \(
-  n \) for which \( \varphi(n) \equiv 2 \pmod{4} \). 
+  n \) for which \( \varphi(n) \equiv 2 \pmod{4} \).
   \begin{itemize}
   \item
     If \( n \in S_1 \), i.e., if \( n = 1 \), then \( \varphi(n) = 1
@@ -279,9 +279,41 @@
   \]
 \end{exercise}
 
+\begin{solution}
+  From the Chinese remainder theorem shown in Theorem 5.26, we know
+  that there is a unique solution moddulo \( 3 \cdot 4 \cdot 5 = 60
+  \). Using the method described in the proof of Theorem 5.26, we
+  define the following variables:
+  \begin{align*}
+    m_1 & = 3, & b_1 & = 1, & M_1 & = 4 \cdot 5 = 20, & M_1' & = 2, \\
+    m_2 & = 4, & b_2 & = 2, & M_2 & = 3 \cdot 5 = 15, & M_2' & = 3, \\
+    m_3 & = 5, & b_3 & = 3, & M_3 & = 3 \cdot 4 = 12, & M_3' & = 3.
+  \end{align*}
+  Now we obtain the solution as follows:
+  \begin{align*}
+    x & = b_1 M_1 M_1' + b_2 M_2 M_2' + b_3 M_3 M_3' \\
+    & = 1 \cdot 20 \cdot 2 + 2 \cdot 15 \cdot 3 + 3 \cdot 12 \cdot 3 \\
+    & = 40 + 90 + 108 \\
+    & = 238 \equiv 58 \pmod{60}.
+  \end{align*}
+\end{solution}
+
+
+\begin{exercise}{5.7}
+  Prove the converse of Wilson's theorem: If \( (n - 1)! + 1 \equiv 0
+  \pmod{n} \), then \( n \) is prime if \( n > 1 \).
+\end{exercise}
+
 \begin{proof}
-  TODO: Chinese Remainder Theorem
+  We assume \( n \) is composite and obtain a contradiction. If \( n
+  \) is composite, then \( n = cd \) for some integers \( c \) and \(
+  d \) where \( 1 < c \le d < n \). Since \( d \mid n \) and \( n \mid
+  (n - 1)! + 1 \equiv 0 \), from the transitive property of
+  divisibility shown in Theorem 1.1 (b), we get \( d \mid (n - 1)! + 1
+  \). Since \( 1 < d < n \), \( d \mid (n - 1)! \). Since \( d \mid (n
+  - 1)! + 1 \) and \( d \mid (n - 1)! \), from the linearity property
+  of divisibility shown in Theorem 1.1 (d), we get \( d \mid 1 \). Now
+  from the comparison property of divisibility shown in Theorem 1.1
+  (i), we get \( d \le 1 \). This is a contradiction since \( d > 1
+  \).
 \end{proof}
-
-
-
