@@ -4,11 +4,20 @@ set -e
 
 tex_chapter_entry()
 {
-    printf "%s" "
+    if printf '%s' "$num" | grep -q '^[0-9]*$'
+    then
+        printf "%s" "
 \setcounter{chapter}{$(( $num - 1 ))}
 \chapter{$title}
 \input{tex/$num}
 "
+    else
+        printf "%s" "
+\appendix
+\chapter{Appendix}
+\input{tex/$num}
+"
+    fi
 }
 
 html_chapter_entry()
@@ -33,7 +42,7 @@ tex_chapter_defs()
 main()
 {
     mkdir -p tmp
-    
+
     > tmp/chapters.tex
     > tmp/chapters.html
 

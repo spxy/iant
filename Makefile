@@ -2,7 +2,7 @@ COMB_JOB = iant-solutions
 COMB_PDF = $(COMB_JOB).pdf
 
 all:
-	make combined
+	make book
 	make pdfs
 	make index
 	make pages
@@ -11,9 +11,10 @@ all:
 	make pdf N=$@
 	make page N=$@
 
-combined: chapters
+book: chapters
 	mkdir -p _site
-	pdflatex -halt-on-error -jobname="$(COMB_JOB)" --output-directory=_site tex/combined
+	pdflatex -halt-on-error -jobname="$(COMB_JOB)" --output-directory=_site tex/book
+	pdflatex -halt-on-error -jobname="$(COMB_JOB)" --output-directory=_site tex/book
 	make clean
 
 index: chapters
@@ -32,6 +33,7 @@ pdf: chapters
 	mkdir -p _site
 	cat tmp/"$(N)-defs.tex" tex/single.tex > tmp/"$(N).tex"
 	pdflatex -halt-on-error -output-directory=_site tmp/"$(N).tex"
+	pdflatex -halt-on-error -output-directory=_site tmp/"$(N).tex"
 	make clean
 
 pages:
@@ -45,7 +47,9 @@ page: chapters
 	make clean
 
 decorate:
-	sed 's|</head>|<link rel="stylesheet" href="main.css"></head>|' "_site/$(F)" > "tmp/$(F)"
+	sed -e 's|</head>|<link rel="stylesheet" href="main.css"></head>|' \
+	    -e 's|<body>|<body><div style="display: none">\\( \\newcommand{\\vdotswithin}[1]{\\,\\;\\vdots} \\)</div>|' \
+	"_site/$(F)" > "tmp/$(F)"
 	mv "tmp/$(F)" "_site/$(F)"
 
 chapters:

@@ -9,12 +9,17 @@
 
 \usepackage{amsthm}
 
+\usepackage{mathtools}
+
 % Link colors.
 \usepackage[colorlinks,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
 
 % Do not display date.
 \newcommand{\created}[1]{\newcommand{\createdate}{#1}}
 \newcommand{\updated}[1]{\newcommand{\updatedate}{#1}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
 
 \newenvironment{notes}[1][Notes]
                {\begin{trivlist} \item[\hskip \labelsep {\bfseries #1.}]}
