@@ -28,8 +28,10 @@ static:
 	cp web/index.html web/main.css _site
 
 decorate:
-	sed -e 's|</head>|<link rel="stylesheet" href="main.css"></head>|' \
-	    -e 's|<body>|<body><div style="display: none">\\( \\newcommand{\\vdotswithin}[1]{\\,\\;\\vdots} \\)</div>|' "_site/$(F).html" > "_site/$(F).tmp.html"
+	> "_site/$(F).tmp.html"
+	awk '/<!DOCTYPE html>/,/<script.*async.*>/' "$(F).html" >> "_site/$(F).tmp.html"
+	cat web/common.html >> "_site/$(F).tmp.html"
+	awk '/<!-- l. 1 -->/,/<\/html>/' "$(F).html" >> "_site/$(F).tmp.html"
 	mv "_site/$(F).tmp.html" "_site/$(F).html"
 
 mac-setup:
