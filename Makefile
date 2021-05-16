@@ -10,6 +10,9 @@ html:
 	make page F=05
 	make page F=A
 
+1 2 3 4 5 6 7 8 9:
+	make 0$@
+
 01 02 03 04 05 06 07 08 09 10 11 12 13 14 A:
 	make page F=$@
 
@@ -29,9 +32,9 @@ static:
 
 decorate:
 	> "_site/$(F).tmp.html"
-	awk '/<!DOCTYPE html>/,/<script.*async.*>/' "$(F).html" >> "_site/$(F).tmp.html"
+	awk 'BEGIN{p=1} /<body>/{p=0} p' "_site/$(F).html" >> "_site/$(F).tmp.html"
 	cat web/common.html >> "_site/$(F).tmp.html"
-	awk '/<!-- l. 1 -->/,/<\/html>/' "$(F).html" >> "_site/$(F).tmp.html"
+	awk 'BEGIN{p=0} p; /<body>/{p=1}' "_site/$(F).html" >> "_site/$(F).tmp.html"
 	mv "_site/$(F).tmp.html" "_site/$(F).html"
 
 mac-setup:

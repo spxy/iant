@@ -80,10 +80,10 @@ dd.trivlist {
   display: inline;
   margin-left: 0;
 }
-.chapterHead br {
+.chapterHead br, .appendixHead br {
   display: none;
 }
-.chapterHead a {
+.chapterHead a, .appendixHead a {
   display: none;
 }
 .titlemark {
