@@ -1,3 +1,5 @@
+\setchapter{05}{Congruences}
+
 \begin{exercise}{5.1}
   Let \( S \) be a set of \( n \) integers (not necessarily distinct).
   Prove that some nonempty subset of \( S \) has a sum which is
@@ -300,6 +302,7 @@
 
 
 \begin{exercise}{5.7}
+  \label{ex-1.1}
   Prove the converse of Wilson's theorem: If \( (n - 1)! + 1 \equiv 0
   \pmod{n} \), then \( n \) is prime if \( n > 1 \).
 \end{exercise}
@@ -316,4 +319,17 @@
   from the comparison property of divisibility shown in Theorem 1.1
   (i), we get \( d \le 1 \). This is a contradiction since \( d > 1
   \).
+\end{proof}
+
+
+\begin{exercise}{5.8}
+  Find all positive integers \( n \) for which \( (n - 1)! + 1 \) is a
+  power of \( n \).
+\end{exercise}
+
+\begin{proof}
+  If \( (n - 1)! + 1 ) = n^k \) for some integer \( k \ge 1 \), then
+  \( n \mid (n - 1)! + 1 \). By the converse of Wilson's theorem in
+  \localref{ex-5.7}{Exercise 5.7}, \( n \) is prime. Therefore let \(
+  n = p \) for some prime \( p \).
 \end{proof}

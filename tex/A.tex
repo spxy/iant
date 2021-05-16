@@ -1,9 +1,12 @@
+\appendix
+\chapter{Appendix}
+
 This appendix presents some interesting results in the form of lemmas.
-These lemmas are used in some of the solutions. However these are
-important enough that they are enumerated independently in this
-appendix.
+These lemmas are used in some of the solutions.
+
 
 \begin{lemma}
+  \label{ap-gcd-smallest}
   The greatest common divisor (gcd) of \( a \) and \( b \) is the
   smallest positive integer that can be written as \( ax + by \) where
   \( a \), \( b \), \( x \), and \( y \) are integers such that either
@@ -30,7 +33,7 @@ appendix.
 
 
 \begin{lemma}
-  \label{multi-coprime}
+  \label{ap-multi-coprime}
   If \( (a, b_1) = (a, b_2) = \dots = (a, b_n) = 1 \), then \( (a, b_1
   b_2 \cdots b_n) = 1 \) where \( a \), \( b_1 \), \( b_2 \), \( \dots
   \), \( b_n \) are integers.
@@ -46,6 +49,7 @@ appendix.
 
 
 \begin{lemma}
+  \label{ap-coprime-divisibility}
   If \( (a, b) = 1 \), \( a \mid c \), and \( b \mid c \), then \( ab
   \mid c \) where \( a \), \( b \), and \( c \) are integers.
 \end{lemma}
@@ -60,6 +64,7 @@ appendix.
 
 
 \begin{lemma}
+  \label{ap-multi-coprime-divisibility}
   If \( a_1, a_2, \dots, a_n \) are relatively prime in pairs, \( a_1
   \mid c \), \( a_2 \mid c \), \( \dots \), \( a_n \mid c \), then \(
   a_1 a_2 \cdots a_n \mid c \) where \( a_1, a_2, \dots, a_n \), and
@@ -78,6 +83,7 @@ appendix.
 
 
 \begin{lemma}
+  \label{ap-multi-coprime-congruence}
   Let \( m_1, m_2, \dots, m_r \) are positive integers, relatively
   prime in pairs. If
   \begin{align*}
@@ -97,4 +103,23 @@ appendix.
     m_2 \cdots m_r} \).
 \end{proof}
 
-  
+
+\begin{lemma}
+  \label{ap-n-divides-n-1-factorial}
+  If \( n \) is composite and \( n > 4 \), then \( n \mid (n - 1)! \).
+\end{lemma}
+
+\begin{proof}
+  If \( n \) is composite either \( n \) is a square of a prime or it
+  isn't. If \( n = p^2 \) where \( p \) is prime, since \( n > 4 \),
+  we get \( p > 2 \). Thus \( p^2 - 2p - 1 = 2 \ge 3^2 - 2 \cdot 3 - 1
+  > 0 \), so we get \( p^2 - 1 > 2p \). Therefore \( (n - 1)! = (p^2 -
+  1)! = 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdots p \cdots 2p \cdots
+  (2p - 1) \cdots (p^2 - 1) \). Thus \( p^2 \mid (n - 1)! \) or
+  equivalently \( n \mid (n - 1)! \).
+
+  If \( n \ne p^2 \) for all primes \( p \), then \( n = cd \) for
+  some integers \( c \) and \( d \) such that \( 1 < c < d < n \).
+  Thus \( (n - 1)! = 1 \cdot 2 \cdots c \cdots d \cdots (n - 1) \).
+  Thus \( cd \mid n \) or equivalently \( n \mid (n - 1)! \).
+\end{proof}

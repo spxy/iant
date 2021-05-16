@@ -71,10 +71,22 @@ th, td {
   padding: 0.3em 0.4em;
   text-align: left;
 }
+/* make4ht overrides */
+
 dt.trivlist {
   display: inline;
 }
 dd.trivlist {
   display: inline;
   margin-left: 0;
+}
+.chapterHead br {
+  display: none;
+}
+.chapterHead a {
+  display: none;
+}
+.titlemark {
+  display: block;
+  margin-bottom: 1em;
 }

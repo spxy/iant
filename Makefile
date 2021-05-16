@@ -3,57 +3,34 @@ COMB_PDF = $(COMB_JOB).pdf
 
 all:
 	make book
-	make pdfs
-	make index
-	make pages
+	make html
 
-01 02 03 04 05 06 07 08 09 10 11 12 13 14:
-	make pdf N=$@
-	make page N=$@
+html:
+	make page F=01
+	make page F=05
+	make page F=A
 
-book: chapters
-	mkdir -p _site
+01 02 03 04 05 06 07 08 09 10 11 12 13 14 A:
+	make page F=$@
+
+book: static
 	pdflatex -halt-on-error -jobname="$(COMB_JOB)" --output-directory=_site tex/book
 	pdflatex -halt-on-error -jobname="$(COMB_JOB)" --output-directory=_site tex/book
 	make clean
 
-index: chapters
-	mkdir -p _site
-	cp web/main.css _site
-	> _site/index.html
-	awk '/DOCTYPE html/,/begin chapters/' web/index.html >> _site/index.html
-	cat tmp/chapters.html >> _site/index.html
-	awk '/end chapters/,/html>/' web/index.html >> _site/index.html
+page: static
+	make4ht -j "$(F)" -d _site tex/single mathjax '' '' '\\def\\htmlmode{}\\def\\F{$(F)}'
+	make decorate F="$(F)"
 	make clean
 
-pdfs:
-	for n in $$(cut -d: -f1 sh/chapters.txt); do make pdf N="$$n"; done
-
-pdf: chapters
+static:
 	mkdir -p _site
-	cat tmp/"$(N)-defs.tex" tex/single.tex > tmp/"$(N).tex"
-	pdflatex -halt-on-error -output-directory=_site tmp/"$(N).tex"
-	pdflatex -halt-on-error -output-directory=_site tmp/"$(N).tex"
-	make clean
-
-pages:
-	for n in $$(cut -d: -f1 sh/chapters.txt); do make page N="$$n"; done
-
-page: chapters
-	mkdir -p _site
-	cat tmp/"$(N)-defs.tex" tex/single.tex > tmp/"$(N).tex"
-	make4ht -d _site tmp/"$(N).tex" mathjax
-	make decorate F="$(N).html"
-	make clean
+	cp web/index.html web/main.css _site
 
 decorate:
 	sed -e 's|</head>|<link rel="stylesheet" href="main.css"></head>|' \
-	    -e 's|<body>|<body><div style="display: none">\\( \\newcommand{\\vdotswithin}[1]{\\,\\;\\vdots} \\)</div>|' \
-	"_site/$(F)" > "tmp/$(F)"
-	mv "tmp/$(F)" "_site/$(F)"
-
-chapters:
-	sh sh/chapters.sh
+	    -e 's|<body>|<body><div style="display: none">\\( \\newcommand{\\vdotswithin}[1]{\\,\\;\\vdots} \\)</div>|' "_site/$(F).html" > "_site/$(F).tmp.html"
+	mv "_site/$(F).tmp.html" "_site/$(F).html"
 
 mac-setup:
 	# Need to update all, so that latex-bin is compatible with make4ht.

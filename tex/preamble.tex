@@ -18,15 +18,12 @@
 \newcommand{\created}[1]{\newcommand{\createdate}{#1}}
 \newcommand{\updated}[1]{\newcommand{\updatedate}{#1}}
 
+
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 
-\newenvironment{notes}[1][Notes]
-               {\begin{trivlist} \item[\hskip \labelsep {\bfseries #1.}]}
-               {\end{trivlist}}
-               
 \newenvironment{exercise}[1]
-               {\begin{trivlist} \item[\hskip \labelsep {\bfseries Exercise #1.}]}
+               {\begin{trivlist}\item[\hskip \labelsep {\bfseries Exercise #1.}]}
                {\end{trivlist}}
 
 \newenvironment{example}[1][Example]
@@ -40,3 +37,21 @@
 \newenvironment{proof2}
                {\begin{proof}[Another Proof]}
                {\end{proof}}
+
+\newcommand{\localref}[2]{\hyperref[#1]{#2}}
+
+\title{Solutions to Introduction to Analytic Number Theory}
+\author{Susam Pal}
+\date{}
+
+\ifdefined\htmlmode
+\newcommand{\setchapter}[2]{%
+  \setcounter{chapter}{\the\numexpr #1 - 1}
+  \chapter{#2}
+}
+\else
+\newcommand{\setchapter}[2]{%
+  \setcounter{chapter}{\the\numexpr #1 - 1}
+  \chapter{#2}
+}
+\fi
