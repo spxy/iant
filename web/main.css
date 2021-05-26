@@ -4,6 +4,7 @@ body {
   margin: 0 auto;
   max-width: 40em;
   padding: 0 1em;
+  font-family: georgia, serif;
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 1em 0 0.5em 0;
@@ -71,8 +72,11 @@ th, td {
   padding: 0.3em 0.4em;
   text-align: left;
 }
-/* make4ht overrides */
 
+/* make4ht overrides */
+dl.trivlist {
+  margin-top: 1.5em;
+}
 dt.trivlist {
   display: inline;
 }
@@ -89,4 +93,10 @@ dd.trivlist {
 .titlemark {
   display: block;
   margin-bottom: 1em;
+}
+.exercise, div.newtheorem {
+  margin: 2em 0 1em 0;
+}
+.proof, .example, .solution {
+  margin: 1em 0;
 }

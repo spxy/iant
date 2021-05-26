@@ -2,26 +2,29 @@ COMB_JOB = iant-solutions
 COMB_PDF = $(COMB_JOB).pdf
 
 all:
-	make book
-	make html
+	make pdf
+	make htmls
 
-html:
-	make page F=01
-	make page F=05
-	make page F=A
+htmls:
+	make html F=01
+	make html F=05
+	make html F=A
 
 1 2 3 4 5 6 7 8 9:
 	make 0$@
 
 01 02 03 04 05 06 07 08 09 10 11 12 13 14 A:
-	make page F=$@
+	make html F=$@
 
-book: static
+pdf: static
 	pdflatex -halt-on-error -jobname="$(COMB_JOB)" --output-directory=_site tex/book
 	pdflatex -halt-on-error -jobname="$(COMB_JOB)" --output-directory=_site tex/book
 	make clean
 
-page: static
+apref:
+	grep applabel tex/A.tex | awk -F '{|}' '{print "\\def\\num" $$2 "{" NR "}"}' > A.ref
+
+html: static apref
 	make4ht -j "$(F)" -d _site tex/single mathjax '' '' '\\def\\htmlmode{}\\def\\F{$(F)}'
 	make decorate F="$(F)"
 	make clean
@@ -60,6 +63,7 @@ clean:
 	find . -name "*.dvi" -exec rm {} +
 	find . -name "*.tmp" -exec rm {} +
 	find . -name "*.xref" -exec rm {} +
+	rm -f A.ref
 	rm -f *.html
 	rm -f *.css
 

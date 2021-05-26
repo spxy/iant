@@ -1,57 +1,80 @@
 % Set paper size and margins.
 \usepackage[a5paper]{geometry}
 
-% For \mathbb etc.
+% For \nmid.
 \usepackage{amssymb}
 
-% For \eqref etc.
-\usepackage{amsmath}
-
+% For \begin{proof}.
 \usepackage{amsthm}
 
+% For \vdotswithin.
 \usepackage{mathtools}
 
 % Link colors.
 \usepackage[colorlinks,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
 
-% Do not display date.
-\newcommand{\created}[1]{\newcommand{\createdate}{#1}}
-\newcommand{\updated}[1]{\newcommand{\updatedate}{#1}}
+% Chapter macro.
+\newcommand{\setchapter}[2]{%
+  \setcounter{chapter}{\the\numexpr #1 - 1}%
+  \chapter{#2}%
+}
 
+% Cross-referencing in HTML and PDF.
+\newcommand{\extextlabel}[3]
+           {Exercise #1.#2\def\temp{#3}\ifx\temp\empty\else{ (#3)}\fi}
 
+\newcommand{\chaptercode}[1]{\ifnum#1<10 0\fi#1}
+
+\ifdefined\htmlmode
+  \newcommand{\exlabel}[2]{\HCode{<a id="ex:\thechapter.#1#2"></a>}}
+  \newcommand{\exref}[3]{\HCode{<a href="\chaptercode{#1}.html\#ex:#1.#2#3">}\extextlabel{#1}{#2}{#3}\HCode{</a>}}
+  \newcommand{\applabel}[1]{\HCode{<a id="app:#1"></a>}}
+  \newcommand{\appref}[1]{\HCode{<a href="A.html\#app:#1">Lemma \csname num#1\endcsname</a> of Appendix}}
+  \newcommand{\opendiv}[1]{\EndP\IgnorePar\HCode{<div class="#1">}}
+  \newcommand{\closediv}{\EndP\IgnorePar\HCode{</div>}}
+\else % pdfmode
+  \newcommand{\exlabel}[2]{\label{ex:\thechapter.#1#2}}
+  \newcommand{\exref}[3]{\hyperref[ex:#1.#2#3]{\extextlabel{#1}{#2}{#3}}}
+  \newcommand{\applabel}[1]{\label{app:#1}}
+  \newcommand{\appref}[1]{\hyperref[app:#1]{Lemma \ref*{#1}} of Appendix}
+  \newcommand{\opendiv}[1]{}
+  \newcommand{\closediv}{}
+\fi
+
+% Theorem environments.
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 
-\newenvironment{exercise}[1]
-               {\begin{trivlist}\item[\hskip \labelsep {\bfseries Exercise #1.}]}
-               {\end{trivlist}}
+% Solution environments.
+\newenvironment{exercise}[2]{
+  \phantomsection%
+  \opendiv{exercise}
+  \exlabel{#1}{#2}%
+  \begin{trivlist}%
+  \item[\hskip \labelsep {\bfseries\extextlabel{\thechapter}{#1}{#2}.}]%
+}{%
+  \end{trivlist}%
+  \closediv%
+}
 
-\newenvironment{example}[1][Example]
-               {\begin{trivlist} \item[\hskip \labelsep {\itshape #1.}]}
-               {\end{trivlist}}
-               
-\newenvironment{solution}[1][Solution]
-               {\begin{trivlist} \item[\hskip \labelsep {\itshape #1.}]}
-               {\end{trivlist}}
+\newenvironment{example}[1][Example]{%
+  \opendiv{example}%
+  \begin{trivlist} \item[\hskip \labelsep {\itshape #1.}]%
+}{%
+  \end{trivlist}%
+  \closediv%
 
-\newenvironment{proof2}
-               {\begin{proof}[Another Proof]}
-               {\end{proof}}
+}
 
-\newcommand{\localref}[2]{\hyperref[#1]{#2}}
+\newenvironment{solution}[1][Solution]{%
+  \opendiv{solution}%
+  \begin{trivlist} \item[\hskip \labelsep {\itshape #1.}]%
+}{%
+  \end{trivlist}%
+  \closediv%
+}
 
+% Metadata.
 \title{Solutions to Introduction to Analytic Number Theory}
 \author{Susam Pal}
 \date{}
-
-\ifdefined\htmlmode
-\newcommand{\setchapter}[2]{%
-  \setcounter{chapter}{\the\numexpr #1 - 1}
-  \chapter{#2}
-}
-\else
-\newcommand{\setchapter}[2]{%
-  \setcounter{chapter}{\the\numexpr #1 - 1}
-  \chapter{#2}
-}
-\fi

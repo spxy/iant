@@ -1,12 +1,12 @@
 \appendix
-\chapter{Appendix}
+\chapter{Lemmas}
 
 This appendix presents some interesting results in the form of lemmas.
 These lemmas are used in some of the solutions.
 
 
 \begin{lemma}
-  \label{ap-gcd-smallest}
+  \applabel{gcdsmallestlincomb}
   The greatest common divisor (gcd) of \( a \) and \( b \) is the
   smallest positive integer that can be written as \( ax + by \) where
   \( a \), \( b \), \( x \), and \( y \) are integers such that either
@@ -33,7 +33,7 @@ These lemmas are used in some of the solutions.
 
 
 \begin{lemma}
-  \label{ap-multi-coprime}
+  \applabel{multiprodcoprime}
   If \( (a, b_1) = (a, b_2) = \dots = (a, b_n) = 1 \), then \( (a, b_1
   b_2 \cdots b_n) = 1 \) where \( a \), \( b_1 \), \( b_2 \), \( \dots
   \), \( b_n \) are integers.
@@ -41,15 +41,15 @@ These lemmas are used in some of the solutions.
 
 \begin{proof}
   We use induction on \( n \). If \( n = 2 \), the lemma is true by
-  exercise 1.2. Assume, then, that the lemma is true for \( n - 1 \).
-  Therefore \( (a, b_1 b_2 \cdots b_{n - 1}) = 1 \). Since \( (a, b_1 b_2
-  \cdots b_{n - 1}) = (a, b_n) = 1 \), by exercise 1.2 we get \( (a,
-  b_1 b_2 \cdots b_n ) = 1 \).
+  \exref{1}{2}{}. Assume that the lemma is true for \( n - 1 \).
+  Therefore \( (a, b_1 b_2 \cdots b_{n - 1}) = 1 \). Since \( (a, b_1
+  b_2 \cdots b_{n - 1}) = (a, b_n) = 1 \), by \exref{1}{2}{} we get \(
+  (a, b_1 b_2 \cdots b_n ) = 1 \).
 \end{proof}
 
 
 \begin{lemma}
-  \label{ap-coprime-divisibility}
+  \applabel{coprimeproddiv}
   If \( (a, b) = 1 \), \( a \mid c \), and \( b \mid c \), then \( ab
   \mid c \) where \( a \), \( b \), and \( c \) are integers.
 \end{lemma}
@@ -64,7 +64,7 @@ These lemmas are used in some of the solutions.
 
 
 \begin{lemma}
-  \label{ap-multi-coprime-divisibility}
+  \applabel{multicoprimeproddiv}
   If \( a_1, a_2, \dots, a_n \) are relatively prime in pairs, \( a_1
   \mid c \), \( a_2 \mid c \), \( \dots \), \( a_n \mid c \), then \(
   a_1 a_2 \cdots a_n \mid c \) where \( a_1, a_2, \dots, a_n \), and
@@ -73,17 +73,17 @@ These lemmas are used in some of the solutions.
 
 \begin{proof}
   We use induction on \( n \). If \( n = 2 \), this lemma is true by
-  the previous lemma. Let \( A = a_1 a_2 \cdots a_{n-1} \). Assume
-  that this lemma is true for \( n - 1 \). Therefore \( A \mid c \).
-  Since \( (a_n, a_1) = (a_n, a_2) = \dots = (a_n, a_{n-1}) = 1 \),
-  using Lemma \ref{multi-coprime} we get \( (A, a_n) = 1 \). Since \(
-  (A, a_n) = 1 \), \( A \mid c \), and \( a_n \mid c \), using the
+  \appref{coprimeproddiv}. Let \( A = a_1 a_2 \cdots a_{n-1} \).
+  Assume that this lemma is true for \( n - 1 \). Therefore \( A \mid
+  c \). Since \( (a_n, a_1) = (a_n, a_2) = \dots = (a_n, a_{n-1}) = 1
+  \), using \appref{multiprodcoprime} we get \( (A, a_n) = 1 \). Since
+  \( (A, a_n) = 1 \), \( A \mid c \), and \( a_n \mid c \), using the
   previous lemma we get \( A a_n \mid c \).
 \end{proof}
 
 
 \begin{lemma}
-  \label{ap-multi-coprime-congruence}
+  \applabel{multicoprimecongruence}
   Let \( m_1, m_2, \dots, m_r \) are positive integers, relatively
   prime in pairs. If
   \begin{align*}
@@ -105,7 +105,7 @@ These lemmas are used in some of the solutions.
 
 
 \begin{lemma}
-  \label{ap-n-divides-n-1-factorial}
+  \applabel{ndivfactorial}
   If \( n \) is composite and \( n > 4 \), then \( n \mid (n - 1)! \).
 \end{lemma}
 

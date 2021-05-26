@@ -1,6 +1,7 @@
-\setchapter{05}{Congruences}
+\setchapter{5}{Congruences}
 
-\begin{exercise}{5.1}
+
+\begin{exercise}{1}{}
   Let \( S \) be a set of \( n \) integers (not necessarily distinct).
   Prove that some nonempty subset of \( S \) has a sum which is
   divisible by \( n \).
@@ -13,7 +14,7 @@
   s_1 + s_2 + \dots + s_k \equiv r_k \pmod{n}
   \]
   where \( 0 \le r_k < n \). Theorem 1.14 guarantees that such \( r_k
-  \) exists for \( k = 1, 2, \dots, n \) Now consider the set
+  \) exists for \( k = 1, 2, \dots, n \). Now consider the set
   \[
   R = \{ r_1, r_2, \dots, r_n \}.
   \]
@@ -29,7 +30,7 @@
 \end{proof}
 
 
-\begin{exercise}{5.2}
+\begin{exercise}{2}{}
   Prove that \( 5n^3 + 7n^5 \equiv 0 \pmod{12} \) for all integers \( n \).
 \end{exercise}
 
@@ -58,7 +59,7 @@
 \end{proof}
 
 
-\begin{exercise}{5.3 (a)}
+\begin{exercise}{3}{a}
   Find all positive integers \( n \) for which \( n^{13} \equiv n
   \pmod{1365} \).
 \end{exercise}
@@ -88,7 +89,7 @@
 \end{solution}
 
 
-\begin{exercise}{5.3 (b)}
+\begin{exercise}{3}{b}
   Find all positive integers \( n \) for which \( n^{17} \equiv n
   \pmod{4080} \).
 \end{exercise}
@@ -118,7 +119,7 @@
 \end{solution}
 
 
-\begin{exercise}{5.4 (a)}
+\begin{exercise}{4}{a}
   Prove that \( \varphi(n) \equiv 2 \pmod{4} \) when \( n = 4 \) and
   when \( n = p^a \), where \( p \) is a prime, \( p \equiv 3
   \pmod{4} \).
@@ -143,11 +144,11 @@
     	\text{ if } a \text{ is odd}.
   \end{align*}
   We have shown that \( \varphi(n) \equiv 2 \pmod{4} \) when \( p \)
-  is a prime, \( p \equiv 3 \pmod{4} \).
+  is a prime such that \( p \equiv 3 \pmod{4} \).
 \end{proof}
 
 
-\begin{exercise}{5.4 (b)}
+\begin{exercise}{4}{b}
   Find all \( n \) for which \( \varphi(n) \equiv 2 \pmod{4} \).
 \end{exercise}
 
@@ -251,8 +252,8 @@
   \item
     If \( n \in S_6 \), i.e., if \( n = p^a \) for prime \( p \equiv 3
     \pmod{4} \) and integer \( a \ge 1 \), then \( \varphi(n) =
-    \varphi(p^a) \equiv 2 \pmod{4} \) as shown in the solution to the
-    part (a) of this exercise problem.
+    \varphi(p^a) \equiv 2 \pmod{4} \) as shown in the solution to
+    \exref{5}{4}{a}.
   \end{itemize}
   We have shown that \( \varphi(n) \equiv 2 \pmod{4} \) if and only if
   \( n = 4 \) or \( n = p^a \) or \( n = 2p^a \) for prime \( p \) and
@@ -260,7 +261,7 @@
 \end{solution}
 
 
-\begin{exercise}{5.5}
+\begin{exercise}{5}{}
   A yardstick is divided into inches is again divided into 70 equal
   parts. Prove that among the four shortest divisions two have left
   endpoints corresponding to 1 and 19 inches. What are the right
@@ -272,7 +273,7 @@
 \end{solution}
 
 
-\begin{exercise}{5.6}
+\begin{exercise}{6}{}
   Find all \( x \) which simultaneously satisfy the system of congruences
   \[
     x \equiv 1 \pmod{3}, \qquad
@@ -301,8 +302,7 @@
 \end{solution}
 
 
-\begin{exercise}{5.7}
-  \label{ex-1.1}
+\begin{exercise}{7}{}
   Prove the converse of Wilson's theorem: If \( (n - 1)! + 1 \equiv 0
   \pmod{n} \), then \( n \) is prime if \( n > 1 \).
 \end{exercise}
@@ -322,7 +322,7 @@
 \end{proof}
 
 
-\begin{exercise}{5.8}
+\begin{exercise}{8}{}
   Find all positive integers \( n \) for which \( (n - 1)! + 1 \) is a
   power of \( n \).
 \end{exercise}
@@ -330,6 +330,6 @@
 \begin{proof}
   If \( (n - 1)! + 1 ) = n^k \) for some integer \( k \ge 1 \), then
   \( n \mid (n - 1)! + 1 \). By the converse of Wilson's theorem in
-  \localref{ex-5.7}{Exercise 5.7}, \( n \) is prime. Therefore let \(
-  n = p \) for some prime \( p \).
+  \exref{5}{7}{}, \( n \) is prime. Therefore let \( n = p \) for some
+  prime \( p \).
 \end{proof}
