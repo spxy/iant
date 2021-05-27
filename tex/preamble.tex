@@ -25,6 +25,8 @@
 
 \newcommand{\chaptercode}[1]{\ifnum#1<10 0\fi#1}
 
+\renewcommand{\theequation}{\arabic{equation}}
+
 \ifdefined\htmlmode
   \newcommand{\exlabel}[2]{\HCode{<a id="ex:\thechapter.#1#2"></a>}}
   \newcommand{\exref}[3]{\HCode{<a href="\chaptercode{#1}.html\#ex:#1.#2#3">}\extextlabel{#1}{#2}{#3}\HCode{</a>}}
@@ -32,6 +34,7 @@
   \newcommand{\appref}[1]{\HCode{<a href="A.html\#app:#1">Lemma \csname num#1\endcsname</a> of Appendix}}
   \newcommand{\opendiv}[1]{\EndP\IgnorePar\HCode{<div class="#1">}}
   \newcommand{\closediv}{\EndP\IgnorePar\HCode{</div>}}
+  \newcommand{\eqrefx}[1]{\( \eqref{#1} \)}
 \else % pdfmode
   \newcommand{\exlabel}[2]{\label{ex:\thechapter.#1#2}}
   \newcommand{\exref}[3]{\hyperref[ex:#1.#2#3]{\extextlabel{#1}{#2}{#3}}}
@@ -39,6 +42,7 @@
   \newcommand{\appref}[1]{\hyperref[app:#1]{Lemma \ref*{#1}} of Appendix}
   \newcommand{\opendiv}[1]{}
   \newcommand{\closediv}{}
+  \newcommand{\eqrefx}[1]{\eqref{#1}}
 \fi
 
 % Theorem environments.

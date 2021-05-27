@@ -328,8 +328,30 @@
 \end{exercise}
 
 \begin{proof}
-  If \( (n - 1)! + 1 ) = n^k \) for some integer \( k \ge 1 \), then
-  \( n \mid (n - 1)! + 1 \). By the converse of Wilson's theorem in
+  If \( (n - 1)! + 1 = n^k \) for some integer \( k \ge 1 \), then \(
+  n \mid (n - 1)! + 1 \). By the converse of Wilson's theorem in
   \exref{5}{7}{}, \( n \) is prime. Therefore let \( n = p \) for some
-  prime \( p \).
+  prime \( p \). Thus \( (p - 1)! + 1 = p^k \). Subtracting \( 1 \)
+  from both sides and dividing both sides by \( (p - 1) \), we get
+  \begin{equation}
+    \label{eq:5.8:1}
+    (p - 2)! = \frac{p^k - 1}{p - 1}.
+  \end{equation}
+  Now
+  \begin{align*}
+    \frac{p^k - 1}{p - 1}
+    & = p^{k-1} + p^{k-2} + \dots + p + 1 \\
+    & = (p^{k-1} - 1) + (p^{k-2} - 2) + \dots + (p - 1) + k \\
+    & = (p - 1)(p^{k-2} + \dots + 1) +
+        (p - 1)(p^{k-3} + \dots + 1) + \dots + (p - 1) + k.
+  \end{align*}
+  Therefore
+  \begin{equation}
+    \label{eq:5.8:2}
+    \frac{p^k - 1}{p - 1} \equiv k \pmod{p - 1}.
+  \end{equation}
+  From \eqrefx{eq:5.8:1} and \eqrefx{eq:5.8:2} we get
+  \[
+    (p - 1)! \equiv k \pmod{p - 1}.
+  \]
 \end{proof}
