@@ -1,0 +1,244 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head><title></title> 
+<meta charset='iso-8859-1' /> 
+<meta name='generator' content='TeX4ht (http://www.tug.org/tex4ht/)' /> 
+<meta name='viewport' content='width=device-width,initial-scale=1' /> 
+<link type='text/css' rel='stylesheet' href='01.css' /> 
+<meta name='src' content='01.tex' /> 
+ <script type='text/x-mathjax-config'> MathJax.Hub.Config({ 'fast-preview': {disabled: true}, TeX: { extensions: ["color.js","AMSmath.js"], equationNumbers: { autoNumber: "AMS" } }, extensions: ["tex2jax.js"], tex2jax: {  inlineMath: [ ["\\\(","\\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true, processEnvironments: true } }); </script> 
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML' type='text/javascript'></script>  
+<!-- begin common.html -->
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div style="display: none">
+    \(
+    \newcommand{\vdotswithin}[1]{\,\;\vdots}
+    \)
+  </div>
+<!-- end common.html -->
+                                                        
+                                                        
+<!-- l. 1 --><p class='indent'>
+                                                        
+                                                        
+</p>
+   <h2 class='chapterHead'><span class='titlemark'>Chapter 1</span><br /><a id='x1-10001'></a>The Fundamental Theorem of Arithmetic</h2>
+<!-- l. 4 --><p class='noindent'>In these exercises lower case latin letters \( a \), \( b \), \( c \), …, \( x \), \( y \), \( z \) represent
+integers. Prove each of the statements in Exercises 1.1 through
+1.6.
+</p><!-- l. 9 --><p class='indent'>   <a id='likesection.1'></a></p><div class='exercise'> <a id='ex:1.1'></a>
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmbx-10'>Exercise 1.1.</span> </dt><dd class='trivlist'>If \( (a, b) = 1 \) and if \( c \mid a \) and \( d \mid b \), then \( (c, d) = 1 \).</dd></dl>
+</div>
+   <div class='example'>
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmti-10'>Example.</span> </dt><dd class='trivlist'>Let \( a = 6 \) and \( b = 35 \), so we have \( (a, b) = (6, 35) = 1 \). Let \( c = 2 \) and \( d = 5 \). We see that \( 2 \mid 6 \) and \( 5 \mid 35 \) and
+indeed \( (2, 5) = 1 \).</dd></dl>
+</div>
+   <div class='example'>
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmti-10'>Another example.</span> </dt><dd class='trivlist'>Let \( a = 0 \) and \( b = 1 \). Let \( c = 2 \) and \( d = 1 \). We see that \( c \mid a \) and \( d \mid b \) and indeed
+\( (c, d) = 1 \).</dd></dl>
+</div>
+<!-- l. 26 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 27 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>Let \( (c, d) = g \). Since \( g \mid c \) and \( c \mid a \), by the transitive property of divisibility
+in Theorem 1.1 (b), \( g \mid a \). Similarly, \( g \mid b \). By the definition of gcd in section
+1.3, we know that every common divisor of \( a \) and \( b \) divides \( (a, b) \), therefore
+\( g \mid 1 \). Since the only nonnegative integer that divides \( 1 \) is \( 1 \) itself, \( g = 1 \).        □
+</p>
+   </div>
+<!-- l. 36 --><p class='indent'>
+                                                        
+                                                        
+</p>
+   <div class='proof'>
+<!-- l. 36 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Another proof.</span> </span> Since \( (a, b) = 1 \), by Theorem 1.2 and the definition of gcd in
+section 1.3, we know that there are integers \( x \) and \( y \) such that \( ax + by = 1 \). Since \( c \mid a \)
+and \( d \mid b \), we have \( a = cm \) and \( b = dn \). Therefore \( c(mx) + d(ny) = (cm)x + (dn)y = ax + by = 1 \). This implies \( (c, d) = 1 \).                          □
+</p>
+   </div>
+<!-- l. 46 --><p class='indent'>   <a id='likesection.2'></a></p><div class='exercise'> <a id='ex:1.2'></a>
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmbx-10'>Exercise 1.2.</span> </dt><dd class='trivlist'>If \( (a, b) = (a, c) = 1 \), then \( (a, bc) = 1 \).</dd></dl>
+</div>
+   <div class='example'>
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmti-10'>Example.</span> </dt><dd class='trivlist'>Let \( a = 35 \), \( b = 6 \), and \( c = 14 \), so we have \( (a, b) = (35, 6) = 1 \) and \( (35, 14) = 1 \). Indeed \( (a, bc) = (35, 84) = 1 \).</dd></dl>
+</div>
+<!-- l. 56 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 57 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>We assume \( (a, bc) &gt; 1 \) and obtain a contradiction. Since \( (a, bc) &gt; 1 \), from the
+fundamental theorem of arithmetic show in Theorem 1.10, we know
+that there is a prime \( p \) such that \( p \mid (a, bc) \). By the definition of gcd in section
+1.3, we know that \( p \mid a \) and \( p \mid bc \). If \( p \mid bc \), from Thereom 1.9 we know that \( p \mid b \) or \( p \mid c \).
+If \( p \mid a \) and \( p \mid b \), from the definition of gcd we know that \( p \mid (a, b) \). But \( (a, b) = 1 \). Since the
+only nonnegative integer that divides \( 1 \) is \( 1 \) itself, we have obtained
+a contradiction. If \( p \mid a \) and \( p \mid c \), we obtain a contradiction similarly. Thus
+\( (a, bc) = 1 \).                                                                                      □
+</p>
+                                                        
+                                                        
+   </div>
+<!-- l. 70 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 70 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Another proof.</span> </span>  This  proof  avoids  the  use  of  the  fundamental
+theorem  of  arithmetic.  Let  \( d = (a, bc) \).  We  will  first  show  that  \( (d, b) = 1 \)  and  then
+conclude later that \( d = 1 \). Let \( (d, b) = e \). Since \( e \mid d \) and \( d \mid a \), by the transitive property of
+divisibility in Theorem 1.1 (b), we get \( e \mid a \). Since \( e \mid a \) and \( e \mid b \), by the definition
+of gcd and Theorem 1.3 (c), we get \( e \mid (a, b) = 1 \). Since \( e \ge 0 \) by the definition of gcd
+and since the only nonnegative integer that divides \( 1 \) is \( 1 \) itself, \( e = 1 \), i.e., \( (d, b) = 1 \).
+Since \( d \mid bc \) and \( (d, b) = 1 \), by Thereom 1.5, we get \( d \mid c \). Since \( d \mid a \) and \( d \mid c \), from the definition
+of gcd, we get \( d \mid (a, c) = 1 \). Thus \( d = 1 \).                                                         □
+</p>
+   </div>
+<!-- l. 86 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 86 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Yet another proof.</span> </span> This is a simple proof that depends only on the
+propeties of gcd shown in section 1.3. Since \( (a, b) = 1 \) and \( (a, c) = 1 \), there exist integers \( x_1 \), \( y_1 \),
+\( x_2 \), and \( y_2 \) such that \begin{align*} a x_1 + b y_1 &amp; = 1, \\ a x_2 + c y_2 &amp; = 1. \end{align*}
+</p><!-- l. 95 --><p class='indent'>   Therefore \( (a x_1 + b y_1) (a x_2 + c y_2) = 1 \\ \iff a (a x_1 x_2 + c x_1 y_2 + b y_1 x_2) + bc (y_1 y_2) = 1. \) Therefore (a, bc) = 1.                                       □
+</p>
+   </div>
+<!-- l. 104 --><p class='indent'>   <a id='likesection.3'></a></p><div class='exercise'> <a id='ex:1.3'></a>
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmbx-10'>Exercise 1.3.</span> </dt><dd class='trivlist'>If \( (a, b) = 1 \), then \( (a^n, b^k) = 1 \) for all \( n \le 1 \), \( k \le 1 \).</dd></dl>
+</div>
+                                                        
+                                                        
+<!-- l. 109 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 110 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>We assume \( (a^n, b^n) &gt; 1 \) and obtain a contradiction. Since \( (a^n, b^n) &gt; 1 \), from the
+fundamental theorem of arithmetic shown in Theorem 1.10, we know
+that there is a prime \( p \) such that \( p \mid (a^n, b^n) \). Since \( p \mid a^n \), from Theorem 1.9 we know
+that \( p \mid a \). Similarly, we know that \( p \mid b \). Since \( p \mid a \) and \( p \mid b \), from the definition of
+gcd in section 1.3, we get \( p \mid (a, b) = 1 \). This is a contradiction because the only
+nonnegative integer that divides \( 1 \) is \( 1 \) itself.                                □
+</p>
+   </div>
+<!-- l. 122 --><p class='indent'>   <a id='likesection.4'></a></p><div class='exercise'> <a id='ex:1.4'></a>
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmbx-10'>Exercise 1.4.</span> </dt><dd class='trivlist'>If \( (a, b) = 1 \), then \( (a + b, a - b) \) is either \( 1 \) or \( 2 \).</dd></dl>
+</div>
+<!-- l. 127 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 128 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>Let  \( d = (a + b, a - b) \).  If  \( a + b \)  and  \( a - b \)  are  relatively  prime,  then  \( d = 1 \).  If  they  are
+not relatively prime, then \( d &gt; 1 \). Then by the fundamental theorem of
+arithmetic shown in Theorem 1.10, there is a prime \( p \) such that \( p \mid d \). From
+the definition of gcd in section 1.3, we get \( p \mid (a + b) \) and \( p \mid (a - b) \). From the linearity
+property of divisibility in Theorem 1.1 (c), we get \( p \mid 2a \) and \( p \mid 2b \). Now there
+are two cases to consider: \( p \mid 2 \) and \( p \nmid 2 \). If \( p \mid 2 \), \( p = 2 \) because the only prime that
+divides \( 2 \) is \( 2 \) itself. If \( p \nmid 2 \), by Theorem 1.8, we have \( (p, 2) = 1 \). If \( p \mid 2a \) and \( (p, 2) = 1 \), then by
+Euclid’s lemma shown in Theorem 1.5, we have \( p \mid a \). We can similarly
+show that if \( p \nmid 2 \), then \( p \mid b \). Thus by the definition of gcd, we get \( p \mid (a, b) = 1 \). Since
+the only positive integer that divides \( 1 \) is \( 1 \) itself, we have obtained a
+                                                        
+                                                        
+contradiction. Therefore, if \( d &gt; 1 \), the only prime \( p \) such that \( p \mid d \) is \( p = 2 \). Thus \( d = 2 \).
+We have shown that \( d = 1 \) or \( d = 2 \).                                                      □
+</p>
+   </div>
+<!-- l. 149 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 149 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Another proof.</span> </span> This is a simpler proof that depends only on the
+properties of gcd. Since \( (a, b) = 1 \), from the definition of gcd in section 1.3, we
+know that there are integers \( x \) and \( y \) such that \( ax + by = 1 \). Therefore, \[ (a + b)(x + y) + (a - b)(x - y) = 2(ax + by) = 2. \] Thus from
+the linearity property in Theorem 1.1 (c), we know that \( (a + b, a - b) \mid 2 \). Now from
+the comparison property in Theorem 1.1 (i), we know that \( (a + b, a - b) \le 2 \).        □
+</p>
+   </div>
+<!-- l. 161 --><p class='indent'>   <a id='likesection.5'></a></p><div class='exercise'> <a id='ex:1.5'></a>
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmbx-10'>Exercise 1.5.</span> </dt><dd class='trivlist'>If \( (a, b) = 1 \), then \( (a + b, a^2 - ab + b^2) \) is either \( 1 \) or \( 3 \).</dd></dl>
+</div>
+<!-- l. 166 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 167 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>Let  \( d = (a + b, a^2 - ab + b^2) \).  If  \( (a + b) \)  and  \( a^2 - ab + b^2 \)  are  relatively  prime,  then  \( d = 1 \).  If  they  are
+not relatively prime, then \( d &gt; 1 \). Then by the fundamental theorem of
+arithmetic in Theorem 1.10, there is a prime \( p \) such that \( p \mid d \). From the
+definition of gcd in section 1.3, we get \( p \mid (a + b) \) and \( p \mid (a^2 - ab + b^2) \). From the linearity
+property  of  divisibility  in  Theorem  1.1  (c),  we  get  \( p \mid (a + b)^2 - (a^2 - ab + b^2) = 3ab \).  Thus  from
+Theorem 1.9, \( p \mid 3 \) or \( p \mid a \) or \( p \mid b \). If \( p \mid a \), since \( p \mid (a + b) \), using the linearity property of
+divisibility again, we see that \( p \mid b \). But then by properties of gcd, \( p \mid (a, b) = 1 \). This
+                                                        
+                                                        
+is a contradiction, since the only positive integer that divides \( 1 \) is \( 1 \)
+itself. Therefore we conclude that \( p \nmid a \). We can show similarly that \( p \nmid b \).
+Thus we are left with only \( p \mid 3 \). Using the contrapositive of Theorem 1.9,
+we conclude that \( p \nmid ab \). Thus using Theorem 1.8, we conclude that \( (p, ab) = 1 \). Since
+\( p \mid 3ab \), using Euclid’s Lemma in Theorem 1.5, we get \( p \mid 3 \). Thus \( p = 3 \). Therefore if
+\( d &gt; 1 \), the only prime \( p \) such that \( p \mid d \) is \( p = 3 \). We have shownt that \( d = 1 \) or \( d = 3 \).          □
+</p>
+   </div>
+<!-- l. 191 --><p class='indent'>   <a id='likesection.6'></a></p><div class='exercise'> <a id='ex:1.6'></a>
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmbx-10'>Exercise 1.6.</span> </dt><dd class='trivlist'>If \( (a, b) = 1 \) and \( d \mid (a + b) \), then \( (a, d) = (b, d) = 1 \).</dd></dl>
+</div>
+   <div class='example'>
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmti-10'>Example.</span> </dt><dd class='trivlist'>Let \( a = 5 \) and \( b = 7 \). Thus \( a + b = 12 \). We see that \( 2 \mid 12 \) and indeed \( (2, 5) = (2, 7) = 1 \). We can pick
+any other divisor of \( d \) of \( 12 \) and indeed \( (d, 5) = (d, 7) = 1 \) holds.</dd></dl>
+</div>
+<!-- l. 202 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 203 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>Let \( g = (a, d) \). By the definition of gcd in section 1.3, \( g \mid a \) and \( g \mid d \). Since \( g \mid d \)
+and \( d \mid (a + b) \), using the transitive property of divisiblity in Theorem 1.1 (b),
+we get \( g \mid (a + b) \). Since \( g \mid a \) and \( g \mid (a + b) \), using the linearity property of divisibility in
+Theorem 1.1 (c), we get \( g \mid b \). Since \( g \mid a \) and \( g \mid b \), using the property of gcd,
+we get \( g \mid (a, b) = 1 \). But the only nonnegative integer that divides \( 1 \) is \( 1 \) itself,
+therefore, \( g = 1 \). Therefore, \( (a, d) = 1 \). We can similarly show that \( (b, d) = 1 \).                  □
+</p>
+   </div>
+<!-- l. 216 --><p class='indent'>   <a id='likesection.7'></a></p><div class='exercise'> <a id='ex:1.7'></a>
+                                                        
+                                                        
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmbx-10'>Exercise 1.7.</span> </dt><dd class='trivlist'>A rational number \( a/b \) with \( (a, b) = 1 \) is called a <span class='cmti-10'>reduced fraction</span>.
+If the sum of two reduced fractions in an integer, say \( (a/b) + (c/d) = n \), prove that \( \lvert -b \rvert = \lvert d \rvert \).</dd></dl>
+</div>
+<!-- l. 223 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 224 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>Since \( (a/b) + (c/d) = n \), we get \( ad + bc = nbd \). Thus \( ad = b(nd - c) \). This shows that \( b \mid ad \). Since \( b \mid ad \) and \( (a, b) = 1 \), from
+Euclid’s lemma in Theorem 1.5 we get, \( b \mid d \). We can similarly show that
+\( d \mid bc \) and thus \( d \mid b \). Since \( b \mid d \) and \( d \mid b \), from Theorem 1.1 (i), we get \( \lvert d \rvert = \lvert b \rvert \).               □
+</p>
+   </div>
+<!-- l. 233 --><p class='indent'>   <a id='likesection.8'></a></p><div class='exercise'> <a id='ex:1.8'></a>
+   <dl class='trivlist'><dt class='trivlist'>
+<span class='cmbx-10'>Exercise 1.8.</span> </dt><dd class='trivlist'>An integer is called <span class='cmti-10'>squarefree </span>if it is not divisible by
+the square of any prime. Prove that for every \( n \ge 1 \) there exist uniquely
+determined \( a &gt; 0 \) and \( b &gt; 0 \) such that \( n = a^2 b \), where \( b \) is squarefree.</dd></dl>
+</div>
+<!-- l. 240 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 241 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>TODO                                                                    □
+</p>
+   </div>
+    
+</body> 
+</html>

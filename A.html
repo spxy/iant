@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head><title></title> 
+<meta charset='iso-8859-1' /> 
+<meta content='TeX4ht (http://www.tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link type='text/css' rel='stylesheet' href='A.css' /> 
+<meta content='A.tex' name='src' /> 
+ <script type='text/x-mathjax-config'> MathJax.Hub.Config({ 'fast-preview': {disabled: true}, TeX: { extensions: ["color.js","AMSmath.js"], equationNumbers: { autoNumber: "AMS" } }, extensions: ["tex2jax.js"], tex2jax: {  inlineMath: [ ["\\\(","\\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true, processEnvironments: true } }); </script> 
+ <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML'></script>  
+<!-- begin common.html -->
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div style="display: none">
+    \(
+    \newcommand{\vdotswithin}[1]{\,\;\vdots}
+    \)
+  </div>
+<!-- end common.html -->
+                                                        
+                                                        
+<!-- l. 2 --><p class='indent'>
+                                                        
+                                                        
+<a id='x1-2r1'></a>
+</p>
+   <h2 class='appendixHead'><span class='titlemark'>Appendix A</span><br /><a id='x1-1000A'></a>Lemmas</h2>
+<!-- l. 4 --><p class='noindent'>This appendix presents some interesting results in the form of lemmas.
+These lemmas are used in some of the solutions.
+</p>
+   <div class='newtheorem'>
+<!-- l. 8 --><p class='noindent'><span class='head'>
+<a id='x1-1001r1'></a>
+<span class='cmbx-10'>Lemma 1.</span>  </span><a id='app:gcdsmallestlincomb'></a> <span class='cmti-10'>The greatest common divisor (gcd) of </span>\( a \) <span class='cmti-10'>and </span>\( b \) <span class='cmti-10'>is the
+</span><span class='cmti-10'>smallest positive integer that can be written as </span>\( ax + by \) <span class='cmti-10'>where </span>\( a \)<span class='cmti-10'>, </span>\( b \)<span class='cmti-10'>, </span>\( x \)<span class='cmti-10'>, and </span>\( y \) <span class='cmti-10'>are
+</span><span class='cmti-10'>integers such that either </span>\( a \ne 0 \) <span class='cmti-10'>or </span>\( b \ne 0 \)<span class='cmti-10'>.</span>
+</p>
+   </div>
+<!-- l. 16 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 17 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>Let \( d = (a, b) \). From the properties of gcd we know that \( d \ge 0 \) and in fact
+\( d = 0 \) if and only if \( a = b = 0 \). Since we have either \( a \) or \( b \) as nonzero, \( d &gt; 0 \). From the
+properties of gcd, we know that \( d \) can be written as \( ax + by \). We will now
+show that \( d \) is the smallest such integer that can be written as \( ax + by \).
+</p><!-- l. 24 --><p class='indent'>   Assume there exists an integer \( d' \) such that \( 0 &lt; d' &lt; d \) and \( d' = ax + by \) for some integers
+\( x \) and \( y \). Then \( d \mid d' \) by the linearity property of divisibility. Since \( d \mid d' \) and \( d' \ne 0 \),
+we get \( \lvert d \rvert \le \lvert d' \rvert \) by the comparison property of divisibility. Since \( d \ge 0 \) and \( d' &gt; 0 \), the
+previous inequality is equivalent to \( d \le d' \). This contradicts our assumption
+that \( d' &lt; d \).                                                                                □
+</p>
+   </div>
+   <div class='newtheorem'>
+                                                        
+                                                        
+<!-- l. 35 --><p class='noindent'><span class='head'>
+<a id='x1-1002r2'></a>
+<span class='cmbx-10'>Lemma 2.</span>  </span><a id='app:multiprodcoprime'></a> <span class='cmti-10'>If </span>\( (a, b_1) = (a, b_2) = \dots = (a, b_n) = 1 \)<span class='cmti-10'>, then </span>\( (a, b_1 b_2 \cdots b_n) = 1 \) <span class='cmti-10'>where </span>\( a \)<span class='cmti-10'>, </span>\( b_1 \)<span class='cmti-10'>, </span>\( b_2 \)<span class='cmti-10'>, </span>\( \dots \)<span class='cmti-10'>, </span>\( b_n \) <span class='cmti-10'>are integers.</span>
+</p>
+   </div>
+<!-- l. 42 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 43 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>We use induction on \( n \). If \( n = 2 \), the lemma is true by <a href='01.html#ex:1.2'>Exercise 1.2</a>.
+Assume that the lemma is true for \( n - 1 \). Therefore \( (a, b_1 b_2 \cdots b_{n - 1}) = 1 \). Since \( (a, b_1 b_2 \cdots b_{n - 1}) = (a, b_n) = 1 \), by <a href='01.html#ex:1.2'>Exercise
+1.2</a> we get \( (a, b_1 b_2 \cdots b_n ) = 1 \).                                                                        □
+</p>
+   </div>
+   <div class='newtheorem'>
+<!-- l. 51 --><p class='noindent'><span class='head'>
+<a id='x1-1003r3'></a>
+<span class='cmbx-10'>Lemma 3.</span>  </span><a id='app:coprimeproddiv'></a> <span class='cmti-10'>If </span>\( (a, b) = 1 \)<span class='cmti-10'>, </span>\( a \mid c \)<span class='cmti-10'>, and </span>\( b \mid c \)<span class='cmti-10'>, then </span>\( ab \mid c \) <span class='cmti-10'>where </span>\( a \)<span class='cmti-10'>, </span>\( b \)<span class='cmti-10'>, and </span>\( c \) <span class='cmti-10'>are integers.</span>
+</p>
+   </div>
+<!-- l. 57 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 58 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>Since \( a \mid c \), we have \( c = ak \) for some integer \( k \). Since \( b \mid c \), we have \( b \mid ak \). Since \( b \mid ak \)
+and \( (b, a) = 1 \), by Euclid’s lemma we get \( b \mid k \). Using the multiplication property
+of divisibility, we get \( ab \mid ak \), i.e., \( ab \mid c \).                                                  □
+                                                        
+                                                        
+</p>
+   </div>
+   <div class='newtheorem'>
+<!-- l. 66 --><p class='noindent'><span class='head'>
+<a id='x1-1004r4'></a>
+<span class='cmbx-10'>Lemma 4.</span>  </span><a id='app:multicoprimeproddiv'></a> <span class='cmti-10'>If </span>\( a_1, a_2, \dots , a_n \) <span class='cmti-10'>are relatively prime in pairs, </span>\( a_1 \mid c \)<span class='cmti-10'>, </span>\( a_2 \mid c \)<span class='cmti-10'>, </span>\( \dots \)<span class='cmti-10'>, </span>\( a_n \mid c \)<span class='cmti-10'>, then </span>\( a_1 a_2 \cdots a_n \mid c \) <span class='cmti-10'>where </span>\( a_1, a_2, \dots , a_n \)<span class='cmti-10'>,
+</span><span class='cmti-10'>and </span>\( c \) <span class='cmti-10'>are integers.</span>
+</p>
+   </div>
+<!-- l. 74 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 75 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>We use induction on \( n \). If \( n = 2 \), this lemma is true by <a href='A.html#app:coprimeproddiv'>Lemma 3</a> of Appendix. Let \( A = a_1 a_2 \cdots a_{n-1} \). Assume
+that this lemma is true for \( n - 1 \). Therefore \( A \mid c \). Since \( (a_n, a_1) = (a_n, a_2) = \dots = (a_n, a_{n-1}) = 1 \), using <a href='A.html#app:multiprodcoprime'>Lemma 2</a> of Appendix we get \( (A, a_n) = 1 \). Since
+\( (A, a_n) = 1 \), \( A \mid c \), and \( a_n \mid c \), using the previous lemma we get \( A a_n \mid c \).                               □
+</p>
+   </div>
+   <div class='newtheorem'>
+<!-- l. 85 --><p class='noindent'><span class='head'>
+<a id='x1-1005r5'></a>
+<span class='cmbx-10'>Lemma 5.</span>  </span><a id='app:multicoprimecongruence'></a> <span class='cmti-10'>Let </span>\( m_1, m_2, \dots , m_r \) <span class='cmti-10'>are positive integers, relatively prime in pairs. If </span>\begin{align*} x &amp; \equiv a \pmod{m_1}, \\ x &amp; \equiv a \pmod{m_2}, \\ &amp; \vdotswithin{\equiv } \\ x &amp; \equiv a \pmod{m_r}, \\ \end{align*}
+</p><!-- l. 95 --><p class='indent'>   <span class='cmti-10'>then </span>\( x \equiv a \pmod{m_1 m_2 \cdots m_r} \)<span class='cmti-10'>.</span>
+</p>
+   </div>
+                                                        
+                                                        
+<!-- l. 98 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 99 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>We have \( m_1 \mid (x - a) \), \( m_2 \mid (x - a) \), \( \dots \), \( m_r \mid (x - a) \), where \( m_1, m_2, \dots , m_r \) are relatively prime in pairs. Therefore,
+by the previous lemma, we get \( m_1 m_2 \cdots m_r \mid (x - a) \), i.e., \( x \equiv a \pmod{m_1 m_2 \cdots m_r} \).                                     □
+</p>
+   </div>
+   <div class='newtheorem'>
+<!-- l. 107 --><p class='noindent'><span class='head'>
+<a id='x1-1006r6'></a>
+<span class='cmbx-10'>Lemma 6.</span>  </span><a id='app:ndivfactorial'></a> <span class='cmti-10'>If </span>\( n \) <span class='cmti-10'>is composite and </span>\( n &gt; 4 \)<span class='cmti-10'>, then </span>\( n \mid (n - 1)! \)<span class='cmti-10'>.</span>
+</p>
+   </div>
+<!-- l. 112 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 113 --><p class='indent'>   <span class='head'>
+<span class='cmti-10'>Proof.</span> </span>If \( n \) is composite either \( n \) is a square of a prime or it isn’t. If \( n = p^2 \)
+where \( p \) is prime, since \( n &gt; 4 \), we get \( p &gt; 2 \). Thus \( p^2 - 2p - 1 = 2 \ge 3^2 - 2 \cdot 3 - 1 &gt; 0 \), so we get \( p^2 - 1 &gt; 2p \). Therefore \( (n - 1)! = (p^2 - 1)! = 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdots p \cdots 2p \cdots (2p - 1) \cdots (p^2 - 1) \). Thus
+\( p^2 \mid (n - 1)! \) or equivalently \( n \mid (n - 1)! \).
+</p><!-- l. 121 --><p class='indent'>   If \( n \ne p^2 \) for all primes \( p \), then \( n = cd \) for some integers \( c \) and \( d \) such that \( 1 &lt; c &lt; d &lt; n \). Thus
+\( (n - 1)! = 1 \cdot 2 \cdots c \cdots d \cdots (n - 1) \). Thus \( cd \mid n \) or equivalently \( n \mid (n - 1)! \).                                                       □
+</p>
+   </div>
+    
+</body> 
+</html>
